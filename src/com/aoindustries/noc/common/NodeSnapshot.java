@@ -1,0 +1,101 @@
+/*
+ * Copyright 2008 by AO Industries, Inc.,
+ * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
+ * All rights reserved.
+ */
+package com.aoindustries.noc.common;
+
+import java.io.Serializable;
+import java.rmi.RemoteException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+/**
+ * Gets a serializable snapshot of a node, including all of its children.
+ * Nodes themselves are Remote objects.  Thus any iteration over them incurs
+ * may round-trips to the RMI server.  This snapshot mechanism allows calling
+ * code to get the current state of the node tree with a single RMI call.
+ *
+ * @author  AO Industries, Inc.
+ */
+final public class NodeSnapshot implements Serializable {
+
+    private static long serialVersionUID = 1;
+
+    final private NodeSnapshot parent;
+    private Node node;
+    final private List<NodeSnapshot> children;
+    final private AlertLevel alertLevel;
+    final private boolean allowsChildren;
+    final private String label;
+
+    /**
+     * Recursively obtains the snapshot of the provided node.
+     */
+    public NodeSnapshot(NodeSnapshot parent, Node node) throws RemoteException {
+        this.parent = parent;
+        this.node = node;
+        List<? extends Node> nodeChildren = node.getChildren();
+        List<NodeSnapshot> children = new ArrayList<NodeSnapshot>(nodeChildren.size());
+        for(Node child : nodeChildren) {
+            children.add(new NodeSnapshot(this, child));
+        }
+        this.children = Collections.unmodifiableList(children);
+        alertLevel = node.getAlertLevel();
+        allowsChildren = node.getAllowsChildren();
+        label = node.getLabel();
+    }
+
+    /**
+     * Gets the parent of this snapshot or <code>null</code> for none.
+     */
+    public NodeSnapshot getParent() {
+        return parent;
+    }
+
+    /**
+     * Gets the underlying node that this is a snapshot of.  This is the
+     * <code>Remote</code> object, and may be used to check the type of
+     * node or make calls for real-time data.
+     */
+    public Node getNode() {
+        return node;
+    }
+
+    /**
+     * This allows the node to be replaced, this is used when a filter wraps a
+     * node.
+     */
+    public void setNode(Node node) {
+        this.node = node;
+    }
+
+    /**
+     * @see Node#getChildren
+     */
+    public List<NodeSnapshot> getChildren() {
+        return children;
+    }
+
+    /**
+     * @see Node#getAlertLevel
+     */
+    public AlertLevel getAlertLevel() {
+        return alertLevel;
+    }
+
+    /**
+     * @see Node#getAllowsChildren
+     */
+    public boolean getAllowsChildren() {
+        return allowsChildren;
+    }
+
+    /**
+     * @see Node#getLabel
+     */
+    public String getLabel() {
+        return label;
+    }
+}
