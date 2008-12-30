@@ -29,6 +29,10 @@ final public class TimeWithTimeZone implements Serializable {
         this.timeZone = timeZone;
     }
 
+    public TimeWithTimeZone(long time) {
+        this(time, null);
+    }
+
     public long getTime() {
         return time;
     }
