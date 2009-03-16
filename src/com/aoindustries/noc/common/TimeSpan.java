@@ -1,5 +1,5 @@
 /*
- * Copyright 2008 by AO Industries, Inc.,
+ * Copyright 2008-2009 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
@@ -33,6 +33,6 @@ final public class TimeSpan implements Serializable {
 
     @Override
     public String toString() {
-        return SQLUtility.getMilliDecimal(timeSpan)+" ms";
+        return SQLUtility.getMilliDecimal(timeSpan)+" sec";
     }
 }

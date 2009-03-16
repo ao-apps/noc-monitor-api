@@ -1,5 +1,5 @@
 /*
- * Copyright 2008 by AO Industries, Inc.,
+ * Copyright 2008-2009 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
@@ -27,6 +27,7 @@ final public class NodeSnapshot implements Serializable {
     private Node node;
     final private List<NodeSnapshot> children;
     final private AlertLevel alertLevel;
+    final private String alertMessage;
     final private boolean allowsChildren;
     final private String label;
 
@@ -43,6 +44,7 @@ final public class NodeSnapshot implements Serializable {
         }
         this.children = Collections.unmodifiableList(children);
         alertLevel = node.getAlertLevel();
+        alertMessage = node.getAlertMessage();
         allowsChildren = node.getAllowsChildren();
         label = node.getLabel();
     }
@@ -83,6 +85,13 @@ final public class NodeSnapshot implements Serializable {
      */
     public AlertLevel getAlertLevel() {
         return alertLevel;
+    }
+
+    /**
+     * @see Node#getAlertMessage
+     */
+    public String getAlertMessage() {
+        return alertMessage;
     }
 
     /**
