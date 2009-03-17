@@ -8,6 +8,7 @@ package com.aoindustries.noc.common;
 import java.io.IOException;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.sql.SQLException;
 import java.util.Locale;
 
 /**
@@ -27,5 +28,5 @@ public interface Monitor extends Remote {
      * in the background.  Once started, a root node will always run.  There is
      * one unique root node per locale, username, and password combination.
      */
-    RootNode login(Locale locale, String username, String password) throws RemoteException, IOException;
+    RootNode login(Locale locale, String username, String password) throws RemoteException, IOException, SQLException;
 }
