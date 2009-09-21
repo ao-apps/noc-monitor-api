@@ -16,7 +16,7 @@ import java.io.Serializable;
  */
 final public class TimeSpan implements Serializable {
 
-    private static long serialVersionUID = 1;
+    private static final long serialVersionUID = 1;
 
     final private long timeSpan;
 

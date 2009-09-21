@@ -15,7 +15,7 @@ import java.util.List;
  */
 final public class TableResult extends Result implements Serializable {
 
-    private static long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     final private boolean isError;
     final private int columns;

@@ -21,7 +21,7 @@ import java.util.List;
  */
 final public class NodeSnapshot implements Serializable {
 
-    private static long serialVersionUID = 1;
+    private static final long serialVersionUID = 1;
 
     final private NodeSnapshot parent;
     private Node node;

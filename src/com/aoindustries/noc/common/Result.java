@@ -14,7 +14,7 @@ import java.io.Serializable;
  */
 abstract public class Result implements Serializable {
 
-    private static long serialVersionUID = 1;
+    private static final long serialVersionUID = 1;
 
     final protected long time;
     final protected long latency;

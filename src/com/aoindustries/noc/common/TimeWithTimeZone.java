@@ -19,7 +19,7 @@ import java.util.TimeZone;
  */
 final public class TimeWithTimeZone implements Serializable {
 
-    private static long serialVersionUID = 1;
+    private static final long serialVersionUID = 1;
 
     final private long time;
     final private TimeZone timeZone;

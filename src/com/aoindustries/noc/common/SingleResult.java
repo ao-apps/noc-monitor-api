@@ -14,7 +14,7 @@ import java.io.Serializable;
  */
 final public class SingleResult extends Result implements Serializable {
 
-    private static long serialVersionUID = 2;
+    private static final long serialVersionUID = 2;
 
     final private String error;
     final private String report;

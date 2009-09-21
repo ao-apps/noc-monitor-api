@@ -14,7 +14,7 @@ import java.io.Serializable;
  */
 final public class AlertLevelChange implements Serializable {
 
-    private static long serialVersionUID = 1;
+    private static final long serialVersionUID = 1;
 
     final private Node node;
     final private String nodeFullPath;
