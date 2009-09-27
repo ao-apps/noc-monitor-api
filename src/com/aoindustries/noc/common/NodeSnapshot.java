@@ -38,11 +38,18 @@ final public class NodeSnapshot implements Serializable {
         this.parent = parent;
         this.node = node;
         List<? extends Node> nodeChildren = node.getChildren();
-        List<NodeSnapshot> children = new ArrayList<NodeSnapshot>(nodeChildren.size());
-        for(Node child : nodeChildren) {
-            children.add(new NodeSnapshot(this, child));
+        int size = nodeChildren.size();
+        if(size==0) {
+            this.children = Collections.emptyList();
+        } else if(size==1) {
+            this.children = Collections.singletonList(new NodeSnapshot(this, nodeChildren.get(0)));
+        } else {
+            List<NodeSnapshot> modifiableChildren = new ArrayList<NodeSnapshot>(size);
+            for(Node child : nodeChildren) {
+                modifiableChildren.add(new NodeSnapshot(this, child));
+            }
+            this.children = Collections.unmodifiableList(modifiableChildren);
         }
-        this.children = Collections.unmodifiableList(children);
         alertLevel = node.getAlertLevel();
         alertMessage = node.getAlertMessage();
         allowsChildren = node.getAllowsChildren();
