@@ -6,7 +6,6 @@
 package com.aoindustries.noc.common;
 
 import java.io.Serializable;
-import java.util.List;
 
 /**
  * Encapsulates a single result, this will be a single row in the
@@ -18,26 +17,21 @@ import java.util.List;
  * 
  * @author  AO Industries, Inc.
  */
-final public class TableMultiResult extends Result implements Serializable {
+abstract public class TableMultiResult<E> extends Result implements Serializable {
 
-    private static final long serialVersionUID = 1;
+    private static final long serialVersionUID = 2L;
 
-    final private String error;
-    final private List<?> rowData;
     final private AlertLevel alertLevel;
+    final private String error;
 
     /**
      * Either error is null or rowData is null, it cannot be that both are null or both are not null.
      */
-    public TableMultiResult(long time, long latency, String error, List<?> rowData, AlertLevel alertLevel) {
+    public TableMultiResult(long time, long latency, AlertLevel alertLevel, String error) {
         super(time, latency);
 
-        if(error==null && rowData==null) throw new IllegalArgumentException("error and rowData may not both be null");
-        if(error!=null && rowData!=null) throw new IllegalArgumentException("error and rowData may not both be non-null");
-
-        this.error = error;
-        this.rowData = rowData;
         this.alertLevel = alertLevel;
+        this.error = error;
     }
 
     /**
@@ -48,12 +42,16 @@ final public class TableMultiResult extends Result implements Serializable {
     }
 
     /**
-     * Gets the data for one row.  This should not include the time and latency, they are implied.
+     * Gets the number of data elements for this result.
      */
-    public List<?> getRowData() {
-        return rowData;
-    }
-    
+    abstract public int getRowDataSize();
+
+    /**
+     * Gets the data for one row.  This should not include the time and latency, they are implied.
+     * When there is an error, getRowData will not be checked and should return null.
+     */
+    abstract public E getRowData(int index);
+
     /**
      * Gets the alert level for this row.
      */

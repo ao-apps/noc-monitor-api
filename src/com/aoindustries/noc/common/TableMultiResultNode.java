@@ -12,17 +12,17 @@ import java.util.Locale;
 /**
  * @author  AO Industries, Inc.
  */
-public interface TableMultiResultNode extends Node {
+public interface TableMultiResultNode<T,E extends TableMultiResult<? extends T>> extends Node {
 
     /**
      * Adds a TableMultiResultListener, which will be notified when new results are available.
      */
-    void addTableMultiResultListener(TableMultiResultListener tableMultiResultListener) throws RemoteException;
+    void addTableMultiResultListener(TableMultiResultListener<? super E> tableMultiResultListener) throws RemoteException;
 
     /**
      * Removes a TableMultiResultListener.
      */
-    void removeTableMultiResultListener(TableMultiResultListener tableMultiResultListener) throws RemoteException;
+    void removeTableMultiResultListener(TableMultiResultListener<? super E> tableMultiResultListener) throws RemoteException;
 
     /**
      * Gets the column headers for the table.  This should not include the time and latency, they are implied.
@@ -32,5 +32,5 @@ public interface TableMultiResultNode extends Node {
     /**
      * Gets the unmodifiable snapshot-copy of the complete list of results.
      */
-    List<? extends TableMultiResult> getResults() throws RemoteException;
+    List<? extends E> getResults() throws RemoteException;
 }

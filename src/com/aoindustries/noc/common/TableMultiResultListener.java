@@ -13,15 +13,15 @@ import java.rmi.RemoteException;
  *
  * @author  AO Industries, Inc.
  */
-public interface TableMultiResultListener extends Remote {
+public interface TableMultiResultListener<E extends TableMultiResult> extends Remote {
 
     /**
      * Notified when a new multi-table result is available.
      */
-    void tableMultiResultAdded(TableMultiResult multiTableResult) throws RemoteException;
+    void tableMultiResultAdded(E multiTableResult) throws RemoteException;
 
     /**
      * Notified when a multi-table result has been removed.
      */
-    void tableMultiResultRemoved(TableMultiResult multiTableResult) throws RemoteException;
+    void tableMultiResultRemoved(E multiTableResult) throws RemoteException;
 }

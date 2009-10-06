@@ -16,5 +16,15 @@ public enum AlertLevel {
     MEDIUM,
     HIGH,
     CRITICAL,
-    UNKNOWN
+    UNKNOWN;
+
+    private static final AlertLevel[] alertLevels = values();
+
+    /**
+     * Gets the alert level from ordinal without the overhead of a call
+     * to <code>values</code>.
+     */
+    public static AlertLevel fromOrdinal(int ordinal) {
+        return alertLevels[ordinal];
+    }
 }
