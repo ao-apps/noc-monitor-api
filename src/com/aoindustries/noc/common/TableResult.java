@@ -20,11 +20,11 @@ final public class TableResult extends Result implements Serializable {
     final private boolean isError;
     final private int columns;
     final private int rows;
-    final private List<?> columnHeaders;
+    final private List<String> columnHeaders;
     final private List<?> tableData;
     final private List<AlertLevel> alertLevels;
 
-    public TableResult(long time, long latency, boolean isError, int columns, int rows, List<?> columnHeaders, List<?> tableData, List<AlertLevel> alertLevels) {
+    public TableResult(long time, long latency, boolean isError, int columns, int rows, List<String> columnHeaders, List<?> tableData, List<AlertLevel> alertLevels) {
         super(time, latency);
 
         if(columns!=columnHeaders.size()) throw new AssertionError("columns!=columnHeaders.size()");
@@ -63,7 +63,7 @@ final public class TableResult extends Result implements Serializable {
     /**
      * Gets the column headers for the table.
      */
-    public List<?> getColumnHeaders() {
+    public List<String> getColumnHeaders() {
         return columnHeaders;
     }
     

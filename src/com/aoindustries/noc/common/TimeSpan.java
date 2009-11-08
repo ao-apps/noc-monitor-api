@@ -7,6 +7,7 @@ package com.aoindustries.noc.common;
 
 import com.aoindustries.sql.SQLUtility;
 import java.io.Serializable;
+import java.util.Locale;
 
 /**
  * Encapsulates a time span in milliseconds,
@@ -33,6 +34,10 @@ final public class TimeSpan implements Serializable {
 
     @Override
     public String toString() {
-        return SQLUtility.getMilliDecimal(timeSpan)+" sec";
+        return toString(Locale.getDefault());
+    }
+
+    public String toString(Locale userLocale) {
+        return ApplicationResourcesAccessor.getMessage(userLocale, "TimeSpan.toString", SQLUtility.getMilliDecimal(timeSpan));
     }
 }
