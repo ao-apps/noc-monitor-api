@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2009 by AO Industries, Inc.,
+ * Copyright 2008-2011 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
@@ -46,7 +46,7 @@ public interface Node extends Remote {
     boolean getAllowsChildren() throws RemoteException;
 
     /**
-     * Gets the locale-specific label for this node.  The label must be
+     * Gets the label for this node.  The label must be
      * constant throughout the life of the node.
      */
     String getLabel() throws RemoteException;

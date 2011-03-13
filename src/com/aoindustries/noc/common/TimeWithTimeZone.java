@@ -1,19 +1,18 @@
 /*
- * Copyright 2008-2009 by AO Industries, Inc.,
+ * Copyright 2008-2011 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
 package com.aoindustries.noc.common;
 
+import com.aoindustries.util.i18n.ThreadLocale;
 import java.io.Serializable;
 import java.text.DateFormat;
 import java.util.Date;
-import java.util.Locale;
 import java.util.TimeZone;
 
 /**
- * Encapsulates a time and an optional time zone.  If the time zone is not provided,
- * will display the time in client-specific locale.
+ * Encapsulates a time and an optional time zone.
  *
  * @author  AO Industries, Inc.
  */
@@ -43,7 +42,7 @@ final public class TimeWithTimeZone implements Serializable {
 
     @Override
     public String toString() {
-        DateFormat df = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.LONG, Locale.getDefault());
+        DateFormat df = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.LONG, ThreadLocale.get());
         if(timeZone!=null) df.setTimeZone(timeZone);
         return df.format(new Date(time));
     }

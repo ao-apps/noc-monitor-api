@@ -1,17 +1,15 @@
 /*
- * Copyright 2008-2009 by AO Industries, Inc.,
+ * Copyright 2008-2011 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
 package com.aoindustries.noc.common;
 
-import com.aoindustries.sql.SQLUtility;
 import java.io.Serializable;
-import java.util.Locale;
+import java.math.BigDecimal;
 
 /**
- * Encapsulates a time span in nanoseconds,
- * will display the time in client-specific locale.
+ * Encapsulates a time span in nanoseconds.
  *
  * @author  AO Industries, Inc.
  */
@@ -34,16 +32,12 @@ final public class NanoTimeSpan implements Serializable {
 
     @Override
     public String toString() {
-        return toString(Locale.getDefault());
+        return toString(nanoTimeSpan);
     }
 
-    public static String toString(long nanoTimeSpan, Locale userLocale) {
-        if(nanoTimeSpan < 1000000) return ApplicationResourcesAccessor.getMessage(userLocale, "NanoTimeSpan.toString.micro", SQLUtility.getMilliDecimal(nanoTimeSpan));
-        if(nanoTimeSpan < 1000000000) return ApplicationResourcesAccessor.getMessage(userLocale, "NanoTimeSpan.toString.milli", SQLUtility.getMilliDecimal(nanoTimeSpan/1000));
-        return ApplicationResourcesAccessor.getMessage(userLocale, "NanoTimeSpan.toString.second", SQLUtility.getMilliDecimal(nanoTimeSpan/1000000));
-    }
-
-    public String toString(Locale userLocale) {
-        return toString(nanoTimeSpan, userLocale);
+    public static String toString(long nanoTimeSpan) {
+        if(nanoTimeSpan < 1000000) return ApplicationResourcesAccessor.accessor.getMessage("NanoTimeSpan.toString.micro", BigDecimal.valueOf(nanoTimeSpan, 3));
+        if(nanoTimeSpan < 1000000000) return ApplicationResourcesAccessor.accessor.getMessage("NanoTimeSpan.toString.milli", BigDecimal.valueOf(nanoTimeSpan/1000, 3));
+        return ApplicationResourcesAccessor.accessor.getMessage("NanoTimeSpan.toString.second", BigDecimal.valueOf(nanoTimeSpan/1000000, 3));
     }
 }

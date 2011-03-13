@@ -1,17 +1,15 @@
 /*
- * Copyright 2008-2009 by AO Industries, Inc.,
+ * Copyright 2008-2011 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
 package com.aoindustries.noc.common;
 
-import com.aoindustries.sql.SQLUtility;
 import java.io.Serializable;
-import java.util.Locale;
+import java.math.BigDecimal;
 
 /**
- * Encapsulates a time span in milliseconds,
- * will display the time in client-specific locale.
+ * Encapsulates a time span in milliseconds.
  *
  * @author  AO Industries, Inc.
  */
@@ -34,10 +32,6 @@ final public class TimeSpan implements Serializable {
 
     @Override
     public String toString() {
-        return toString(Locale.getDefault());
-    }
-
-    public String toString(Locale userLocale) {
-        return ApplicationResourcesAccessor.getMessage(userLocale, "TimeSpan.toString", SQLUtility.getMilliDecimal(timeSpan));
+        return ApplicationResourcesAccessor.accessor.getMessage("TimeSpan.toString", BigDecimal.valueOf(timeSpan, 3));
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2009 by AO Industries, Inc.,
+ * Copyright 2008-2011 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
@@ -7,7 +7,6 @@ package com.aoindustries.noc.common;
 
 import java.rmi.RemoteException;
 import java.util.List;
-import java.util.Locale;
 
 /**
  * @author  AO Industries, Inc.
@@ -27,7 +26,7 @@ public interface TableMultiResultNode<T,E extends TableMultiResult<? extends T>>
     /**
      * Gets the column headers for the table.  This should not include the time and latency, they are implied.
      */
-    List<?> getColumnHeaders(Locale locale) throws RemoteException;
+    List<?> getColumnHeaders() throws RemoteException;
 
     /**
      * Gets the unmodifiable snapshot-copy of the complete list of results.
