@@ -5,6 +5,7 @@
  */
 package com.aoindustries.noc.common;
 
+import static com.aoindustries.noc.common.ApplicationResources.accessor;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -32,6 +33,6 @@ final public class TimeSpan implements Serializable {
 
     @Override
     public String toString() {
-        return ApplicationResourcesAccessor.accessor.getMessage("TimeSpan.toString", BigDecimal.valueOf(timeSpan, 3));
+        return accessor.getMessage("TimeSpan.toString", BigDecimal.valueOf(timeSpan, 3));
     }
 }

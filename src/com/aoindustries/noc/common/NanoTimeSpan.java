@@ -5,6 +5,7 @@
  */
 package com.aoindustries.noc.common;
 
+import static com.aoindustries.noc.common.ApplicationResources.accessor;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -36,8 +37,8 @@ final public class NanoTimeSpan implements Serializable {
     }
 
     public static String toString(long nanoTimeSpan) {
-        if(nanoTimeSpan < 1000000) return ApplicationResourcesAccessor.accessor.getMessage("NanoTimeSpan.toString.micro", BigDecimal.valueOf(nanoTimeSpan, 3));
-        if(nanoTimeSpan < 1000000000) return ApplicationResourcesAccessor.accessor.getMessage("NanoTimeSpan.toString.milli", BigDecimal.valueOf(nanoTimeSpan/1000, 3));
-        return ApplicationResourcesAccessor.accessor.getMessage("NanoTimeSpan.toString.second", BigDecimal.valueOf(nanoTimeSpan/1000000, 3));
+        if(nanoTimeSpan < 1000000) return accessor.getMessage("NanoTimeSpan.toString.micro", BigDecimal.valueOf(nanoTimeSpan, 3));
+        if(nanoTimeSpan < 1000000000) return accessor.getMessage("NanoTimeSpan.toString.milli", BigDecimal.valueOf(nanoTimeSpan/1000, 3));
+        return accessor.getMessage("NanoTimeSpan.toString.second", BigDecimal.valueOf(nanoTimeSpan/1000000, 3));
     }
 }
