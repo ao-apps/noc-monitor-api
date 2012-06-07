@@ -14,7 +14,7 @@ import java.math.BigDecimal;
  *
  * @author  AO Industries, Inc.
  */
-final public class TimeSpan implements Serializable {
+final public class TimeSpan implements Serializable, Comparable<TimeSpan> {
 
     private static final long serialVersionUID = 1;
 
@@ -34,5 +34,12 @@ final public class TimeSpan implements Serializable {
     @Override
     public String toString() {
         return accessor.getMessage("TimeSpan.toString", BigDecimal.valueOf(timeSpan, 3));
+    }
+
+    @Override
+    public int compareTo(TimeSpan o) {
+        if(timeSpan<o.timeSpan) return -1;
+        if(timeSpan>o.timeSpan) return 1;
+        return 0;
     }
 }

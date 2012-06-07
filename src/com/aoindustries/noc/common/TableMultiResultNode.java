@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2011 by AO Industries, Inc.,
+ * Copyright 2008-2012 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
@@ -11,17 +11,17 @@ import java.util.List;
 /**
  * @author  AO Industries, Inc.
  */
-public interface TableMultiResultNode<T,E extends TableMultiResult<? extends T>> extends Node {
+public interface TableMultiResultNode<R extends TableMultiResult> extends Node {
 
     /**
      * Adds a TableMultiResultListener, which will be notified when new results are available.
      */
-    void addTableMultiResultListener(TableMultiResultListener<? super E> tableMultiResultListener) throws RemoteException;
+    void addTableMultiResultListener(TableMultiResultListener<? super R> tableMultiResultListener) throws RemoteException;
 
     /**
      * Removes a TableMultiResultListener.
      */
-    void removeTableMultiResultListener(TableMultiResultListener<? super E> tableMultiResultListener) throws RemoteException;
+    void removeTableMultiResultListener(TableMultiResultListener<? super R> tableMultiResultListener) throws RemoteException;
 
     /**
      * Gets the column headers for the table.  This should not include the time and latency, they are implied.
@@ -29,7 +29,7 @@ public interface TableMultiResultNode<T,E extends TableMultiResult<? extends T>>
     List<?> getColumnHeaders() throws RemoteException;
 
     /**
-     * Gets the unmodifiable snapshot-copy of the complete list of results.
+     * Gets an unmodifiable snapshot-copy of the complete list of results.
      */
-    List<? extends E> getResults() throws RemoteException;
+    List<? extends R> getResults() throws RemoteException;
 }

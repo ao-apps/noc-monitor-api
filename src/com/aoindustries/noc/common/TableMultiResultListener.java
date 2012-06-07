@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2011 by AO Industries, Inc.,
+ * Copyright 2008-2012 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
@@ -13,15 +13,15 @@ import java.rmi.RemoteException;
  *
  * @author  AO Industries, Inc.
  */
-public interface TableMultiResultListener<E extends TableMultiResult> extends Remote {
+public interface TableMultiResultListener<R extends TableMultiResult> extends Remote {
 
     /**
      * Notified when a new multi-table result is available.
      */
-    void tableMultiResultAdded(E multiTableResult) throws RemoteException;
+    void tableMultiResultAdded(R multiTableResult) throws RemoteException;
 
     /**
      * Notified when a multi-table result has been removed.
      */
-    void tableMultiResultRemoved(E multiTableResult) throws RemoteException;
+    void tableMultiResultRemoved(R multiTableResult) throws RemoteException;
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2009-2011 by AO Industries, Inc.,
+ * Copyright 2009-2012 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
@@ -10,7 +10,7 @@ import java.io.Serializable;
 /**
  * @author  AO Industries, Inc.
  */
-public class TimeResult extends TableMultiResult<TimeSpan> implements Serializable {
+public class TimeResult extends TableMultiResult implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -30,18 +30,11 @@ public class TimeResult extends TableMultiResult<TimeSpan> implements Serializab
         return skew;
     }
 
-    /**
-     * Gets the number of data elements for this result.
-     */
     @Override
     public int getRowDataSize() {
         return 1;
     }
 
-    /**
-     * Gets the data for one row.  This should not include the time and latency, they are implied.
-     * When there is an error, getRowData will not be checked and should return null.
-     */
     @Override
     public TimeSpan getRowData(int index) {
         switch(index) {

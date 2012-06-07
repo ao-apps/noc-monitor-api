@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2011 by AO Industries, Inc.,
+ * Copyright 2008-2012 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
@@ -20,7 +20,7 @@ public interface Node extends Remote {
     Node getParent() throws RemoteException;
 
     /**
-     * Gets the unmodifiable list of children of this node.  The list returned
+     * Gets an unmodifiable list of children of this node.  The list returned
      * is a snapshot copy of the node state; it will not be updated when the
      * node children change and it may be used without any additional
      * synchronization.
