@@ -6,6 +6,7 @@
 package com.aoindustries.noc.common;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Encapsulates any type of result.
@@ -29,6 +30,13 @@ abstract public class Result implements Serializable {
      */
     public long getTime() {
         return time;
+    }
+
+    /**
+     * Gets the time this check was performed as a Date.
+     */
+    final public Date getDate() {
+        return new Date(getTime());
     }
 
     /**

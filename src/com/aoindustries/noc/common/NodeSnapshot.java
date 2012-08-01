@@ -29,6 +29,7 @@ final public class NodeSnapshot implements Serializable {
     final private AlertLevel alertLevel;
     final private String alertMessage;
     final private boolean allowsChildren;
+    final private String id;
     final private String label;
 
     /**
@@ -53,6 +54,7 @@ final public class NodeSnapshot implements Serializable {
         alertLevel = node.getAlertLevel();
         alertMessage = node.getAlertMessage();
         allowsChildren = node.getAllowsChildren();
+        id = node.getId();
         label = node.getLabel();
     }
 
@@ -106,6 +108,13 @@ final public class NodeSnapshot implements Serializable {
      */
     public boolean getAllowsChildren() {
         return allowsChildren;
+    }
+
+    /**
+     * @see Node#getId
+     */
+    public String getId() {
+        return id;
     }
 
     /**

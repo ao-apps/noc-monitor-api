@@ -46,6 +46,12 @@ public interface Node extends Remote {
     boolean getAllowsChildren() throws RemoteException;
 
     /**
+     * Gets the identifier for this node.  The identifier is unique among all
+     * children of a single parent.
+     */
+    String getId() throws RemoteException;
+
+    /**
      * Gets the label for this node.  The label must be
      * constant throughout the life of the node.
      */

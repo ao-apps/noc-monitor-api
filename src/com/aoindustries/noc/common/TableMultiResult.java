@@ -6,6 +6,8 @@
 package com.aoindustries.noc.common;
 
 import java.io.Serializable;
+import java.util.AbstractList;
+import java.util.List;
 
 /**
  * Encapsulates a single result, this will be a single row in the
@@ -51,6 +53,23 @@ abstract public class TableMultiResult extends Result implements Serializable {
      * When there is an error, getRowData will not be checked and should return null.
      */
     abstract public Object getRowData(int index);
+
+    /**
+     * Gets a list view of the row data.
+     */
+    final public List<Object> getRowDataAsList() {
+        return new AbstractList<Object>() {
+            @Override
+            public int size() {
+                return getRowDataSize();
+            }
+
+            @Override
+            public Object get(int index) {
+                return getRowData(index);
+            }
+        };
+    }
 
     /**
      * Gets the alert level for this row.
