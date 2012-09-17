@@ -38,6 +38,15 @@ final public class AlertLevelChange implements Serializable {
     }
 
     /**
+     * Gets a new version of this object with the node changed.  If the node
+     * is the same object, this object is returned.
+     */
+    public AlertLevelChange setNode(Node node) {
+        if(node==this.node) return this;
+        return new AlertLevelChange(node, nodeFullPath, oldAlertLevel, newAlertLevel, alertMessage);
+    }
+
+    /**
      * Gets the full path for simplified displays.
      */
     public String getNodeFullPath() {

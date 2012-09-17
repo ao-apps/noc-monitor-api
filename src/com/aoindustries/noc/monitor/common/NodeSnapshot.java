@@ -24,6 +24,7 @@ final public class NodeSnapshot implements Serializable {
     private static final long serialVersionUID = 1;
 
     final private NodeSnapshot parent;
+    // TODO: Make this immutable, and return new object on setNode
     private Node node;
     final private List<NodeSnapshot> children;
     final private AlertLevel alertLevel;

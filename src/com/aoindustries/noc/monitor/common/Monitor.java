@@ -19,7 +19,7 @@ public interface Monitor extends Remote {
     /**
      * The ports used for RMI communication.
      */
-    public static final int DEFAULT_RMI_CLIENT_PORT = 4585;
+    public static final int DEFAULT_RMI_CLIENT_PORT = 4586;
     public static final int DEFAULT_RMI_SERVER_PORT = 4584;
 
     /**
