@@ -10,6 +10,7 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Gets a serializable snapshot of a node, including all of its children.
@@ -32,6 +33,8 @@ final public class NodeSnapshot implements Serializable {
     final private boolean allowsChildren;
     final private String id;
     final private String label;
+    // TODO: Make this immutable, and return new object on setNode
+    private UUID uuid;
 
     /**
      * Recursively obtains the snapshot of the provided node.
@@ -57,6 +60,7 @@ final public class NodeSnapshot implements Serializable {
         allowsChildren = node.getAllowsChildren();
         id = node.getId();
         label = node.getLabel();
+        uuid = node.getUuid();
     }
 
     /**
@@ -77,10 +81,11 @@ final public class NodeSnapshot implements Serializable {
 
     /**
      * This allows the node to be replaced, this is used when a filter wraps a
-     * node.
+     * node.  Updates both the node and the cached uuid.
      */
-    public void setNode(Node node) {
+    public void setNode(Node node) throws RemoteException {
         this.node = node;
+        this.uuid = node.getUuid();
     }
 
     /**
@@ -123,5 +128,12 @@ final public class NodeSnapshot implements Serializable {
      */
     public String getLabel() {
         return label;
+    }
+
+    /**
+     * @see Node#getUuid
+     */
+    public UUID getUuid() {
+        return uuid;
     }
 }
