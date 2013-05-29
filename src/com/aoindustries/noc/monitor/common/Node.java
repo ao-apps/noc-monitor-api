@@ -8,7 +8,6 @@ package com.aoindustries.noc.monitor.common;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * @author  AO Industries, Inc.
@@ -47,40 +46,8 @@ public interface Node extends Remote {
     boolean getAllowsChildren() throws RemoteException;
 
     /**
-     * Gets the identifier for this node.  The identifier is unique among all
-     * children of a single parent.
-     */
-    String getId() throws RemoteException;
-
-    /**
      * Gets the label for this node.  The label must be
      * constant throughout the life of the node.
      */
     String getLabel() throws RemoteException;
-
-    /**
-     * Gets the UUID of this node.  The UUID will not change unless the server,
-     * or some component between the client and server, is restarted.  Two nodes
-     * are considered equal when their UUIDs are equal, and their hashCode is
-     * based on the UUID value.
-     */
-    UUID getUuid() throws RemoteException;
-
-    /**
-     * Every node implementation must base equality off of UUID value.
-     */
-    //@Override
-    //boolean equals(Object obj);
-
-    /**
-     * Every node implementation must generate its hashCode from the UUID value.
-     */
-    //@Override
-    //int hashCode();
-
-    /**
-     * Every node implementation must have toString call getLabel();
-     */
-    //@Override
-    //String toString();
 }

@@ -41,13 +41,12 @@ public class UpsResult extends TableMultiResult implements Serializable {
     private final float itemp;
 
     public UpsResult(
-        MonitoringPoint monitoringPoint,
         long time,
         long latency,
         AlertLevel alertLevel,
         String error
     ) {
-        super(monitoringPoint, time, latency, alertLevel, error);
+        super(time, latency, alertLevel, error);
         this.upsname = null;
         this.status = null;
         this.linev = Float.NaN;
@@ -68,7 +67,6 @@ public class UpsResult extends TableMultiResult implements Serializable {
     }
 
     public UpsResult(
-        MonitoringPoint monitoringPoint,
         long time,
         long latency,
         AlertLevel alertLevel,
@@ -90,7 +88,7 @@ public class UpsResult extends TableMultiResult implements Serializable {
         TimeSpan timeleft,
         float itemp
     ) {
-        super(monitoringPoint, time, latency, alertLevel, null);
+        super(time, latency, alertLevel, null);
         this.upsname = upsname;
         this.status = status;
         this.linev = linev;

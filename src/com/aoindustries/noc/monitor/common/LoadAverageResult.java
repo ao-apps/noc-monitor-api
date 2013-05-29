@@ -26,13 +26,12 @@ public class LoadAverageResult extends TableMultiResult implements Serializable 
     private final float loadCritical;
 
     public LoadAverageResult(
-        MonitoringPoint monitoringPoint,
         long time,
         long latency,
         AlertLevel alertLevel,
         String error
     ) {
-        super(monitoringPoint, time, latency, alertLevel, error);
+        super(time, latency, alertLevel, error);
         this.oneMinute = Float.NaN;
         this.fiveMinute = Float.NaN;
         this.tenMinute = Float.NaN;
@@ -46,7 +45,6 @@ public class LoadAverageResult extends TableMultiResult implements Serializable 
     }
 
     public LoadAverageResult(
-        MonitoringPoint monitoringPoint,
         long time,
         long latency,
         AlertLevel alertLevel,
@@ -61,7 +59,7 @@ public class LoadAverageResult extends TableMultiResult implements Serializable 
         float loadHigh,
         float loadCritical
     ) {
-        super(monitoringPoint, time, latency, alertLevel, null);
+        super(time, latency, alertLevel, null);
         this.oneMinute = oneMinute;
         this.fiveMinute = fiveMinute;
         this.tenMinute = tenMinute;

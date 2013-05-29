@@ -27,13 +27,12 @@ public class MySQLReplicationResult extends TableMultiResult implements Serializ
     private final String alertThresholds;
 
     public MySQLReplicationResult(
-        MonitoringPoint monitoringPoint,
         long time,
         long latency,
         AlertLevel alertLevel,
         String error
     ) {
-        super(monitoringPoint, time, latency, alertLevel, error);
+        super(time, latency, alertLevel, error);
         this.secondsBehindMaster = null;
         this.file = null;
         this.position = null;
@@ -48,7 +47,6 @@ public class MySQLReplicationResult extends TableMultiResult implements Serializ
     }
 
     public MySQLReplicationResult(
-        MonitoringPoint monitoringPoint,
         long time,
         long latency,
         AlertLevel alertLevel,
@@ -64,7 +62,7 @@ public class MySQLReplicationResult extends TableMultiResult implements Serializ
         String lastError,
         String alertThresholds
     ) {
-        super(monitoringPoint, time, latency, alertLevel, null);
+        super(time, latency, alertLevel, null);
         this.secondsBehindMaster = secondsBehindMaster;
         this.file = file;
         this.position = position;

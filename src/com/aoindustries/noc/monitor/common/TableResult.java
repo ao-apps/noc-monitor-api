@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2012 by AO Industries, Inc.,
+ * Copyright 2008-2011 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
@@ -24,8 +24,8 @@ final public class TableResult extends Result implements Serializable {
     final private List<?> tableData;
     final private List<AlertLevel> alertLevels;
 
-    public TableResult(MonitoringPoint monitoringPoint, long time, long latency, boolean isError, int columns, int rows, List<String> columnHeaders, List<?> tableData, List<AlertLevel> alertLevels) {
-        super(monitoringPoint, time, latency);
+    public TableResult(long time, long latency, boolean isError, int columns, int rows, List<String> columnHeaders, List<?> tableData, List<AlertLevel> alertLevels) {
+        super(time, latency);
 
         if(columns!=columnHeaders.size()) throw new AssertionError("columns!=columnHeaders.size()");
         if((rows*columns)!=tableData.size()) throw new AssertionError("(rows*columns)!=tableData.size()");

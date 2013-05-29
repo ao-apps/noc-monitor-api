@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2012 by AO Industries, Inc.,
+ * Copyright 2008-2011 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
@@ -35,15 +35,6 @@ final public class AlertLevelChange implements Serializable {
      */
     public Node getNode() {
         return node;
-    }
-
-    /**
-     * Gets a new version of this object with the node changed.  If the node
-     * is the same object, this object is returned.
-     */
-    public AlertLevelChange setNode(Node node) {
-        if(node==this.node) return this;
-        return new AlertLevelChange(node, nodeFullPath, oldAlertLevel, newAlertLevel, alertMessage);
     }
 
     /**
