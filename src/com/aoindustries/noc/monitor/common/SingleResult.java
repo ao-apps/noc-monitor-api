@@ -19,8 +19,8 @@ final public class SingleResult extends Result implements Serializable {
     final private String error;
     final private String report;
 
-    public SingleResult(long time, long latency, String error, String report) {
-        super(time, latency);
+    public SingleResult(MonitoringPoint monitoringPoint, long time, long latency, String error, String report) {
+        super(monitoringPoint, time, latency);
 
         if(error==null && report==null) throw new IllegalArgumentException("error and report may not both be null");
         if(error!=null && report!=null) throw new IllegalArgumentException("error and report may not both be non-null");

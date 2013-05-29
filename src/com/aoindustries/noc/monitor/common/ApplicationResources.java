@@ -1,10 +1,10 @@
-package com.aoindustries.noc.monitor.common;
-
 /*
  * Copyright 2007-2009 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
+package com.aoindustries.noc.monitor.common;
+
 import com.aoindustries.util.i18n.ApplicationResourcesAccessor;
 import com.aoindustries.util.i18n.EditableResourceBundle;
 import com.aoindustries.util.i18n.EditableResourceBundleSet;
@@ -35,7 +35,7 @@ public final class ApplicationResources extends EditableResourceBundle {
         super(
             new Locale(""),
             bundleSet,
-            new File(System.getProperty("user.home")+"/common/ao/cvswork/noc-common/src/com/aoindustries/noc/common/ApplicationResources.properties")
+            new File(System.getProperty("user.home")+"/common/ao/cvswork/noc-monitor-common/src/com/aoindustries/noc/common/ApplicationResources.properties")
         );
     }
 

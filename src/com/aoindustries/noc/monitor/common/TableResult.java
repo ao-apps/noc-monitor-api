@@ -24,8 +24,8 @@ final public class TableResult extends Result implements Serializable {
     final private List<?> tableData;
     final private List<AlertLevel> alertLevels;
 
-    public TableResult(long time, long latency, boolean isError, int columns, int rows, List<String> columnHeaders, List<?> tableData, List<AlertLevel> alertLevels) {
-        super(time, latency);
+    public TableResult(MonitoringPoint monitoringPoint, long time, long latency, boolean isError, int columns, int rows, List<String> columnHeaders, List<?> tableData, List<AlertLevel> alertLevels) {
+        super(monitoringPoint, time, latency);
 
         if(columns!=columnHeaders.size()) throw new AssertionError("columns!=columnHeaders.size()");
         if((rows*columns)!=tableData.size()) throw new AssertionError("(rows*columns)!=tableData.size()");

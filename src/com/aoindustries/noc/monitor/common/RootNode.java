@@ -6,6 +6,7 @@
 package com.aoindustries.noc.monitor.common;
 
 import java.rmi.RemoteException;
+import java.util.SortedSet;
 
 /**
  * @author  AO Industries, Inc.
@@ -26,4 +27,9 @@ public interface RootNode extends Node {
      * Gets a snapshot of the root node and all of its children.
      */
     NodeSnapshot getSnapshot() throws RemoteException;
+
+    /**
+     * Gets all of the monitoring points available to the current user.
+     */
+    SortedSet<MonitoringPoint> getMonitoringPoints() throws RemoteException;
 }

@@ -25,12 +25,13 @@ public class NetDeviceBitRateResult extends TableMultiResult implements Serializ
     private final long bpsCritical;
 
     public NetDeviceBitRateResult(
+        MonitoringPoint monitoringPoint,
         long time,
         long latency,
         AlertLevel alertLevel,
         String error
     ) {
-        super(time, latency, alertLevel, error);
+        super(monitoringPoint, time, latency, alertLevel, error);
         this.txBitsPerSecond = -1;
         this.rxBitsPerSecond = -1;
         this.txPacketsPerSecond = -1;
@@ -42,6 +43,7 @@ public class NetDeviceBitRateResult extends TableMultiResult implements Serializ
     }
 
     public NetDeviceBitRateResult(
+        MonitoringPoint monitoringPoint,
         long time,
         long latency,
         AlertLevel alertLevel,
@@ -54,7 +56,7 @@ public class NetDeviceBitRateResult extends TableMultiResult implements Serializ
         long bpsHigh,
         long bpsCritical
     ) {
-        super(time, latency, alertLevel, null);
+        super(monitoringPoint, time, latency, alertLevel, null);
         this.txBitsPerSecond = txBitsPerSecond;
         this.rxBitsPerSecond = rxBitsPerSecond;
         this.txPacketsPerSecond = txPacketsPerSecond;

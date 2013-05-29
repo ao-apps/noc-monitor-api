@@ -16,13 +16,13 @@ public class TimeResult extends TableMultiResult implements Serializable {
 
     private final long skew;
 
-    public TimeResult(long time, long latency, AlertLevel alertLevel, String error) {
-        super(time, latency, alertLevel, error);
+    public TimeResult(MonitoringPoint monitoringPoint, long time, long latency, AlertLevel alertLevel, String error) {
+        super(monitoringPoint, time, latency, alertLevel, error);
         this.skew = Long.MIN_VALUE;
     }
 
-    public TimeResult(long time, long latency, AlertLevel alertLevel, long skew) {
-        super(time, latency, alertLevel, null);
+    public TimeResult(MonitoringPoint monitoringPoint, long time, long latency, AlertLevel alertLevel, long skew) {
+        super(monitoringPoint, time, latency, alertLevel, null);
         this.skew = skew;
     }
 

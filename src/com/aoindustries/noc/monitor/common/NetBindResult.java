@@ -16,8 +16,8 @@ public class NetBindResult extends TableMultiResult implements Serializable {
 
     private final String result;
 
-    public NetBindResult(long time, long latency, AlertLevel alertLevel, String error, String result) {
-        super(time, latency, alertLevel, error);
+    public NetBindResult(MonitoringPoint monitoringPoint, long time, long latency, AlertLevel alertLevel, String error, String result) {
+        super(monitoringPoint, time, latency, alertLevel, error);
         if(error!=null && result!=null) throw new IllegalArgumentException("error!=null && result!=null");
         this.result = result;
     }
