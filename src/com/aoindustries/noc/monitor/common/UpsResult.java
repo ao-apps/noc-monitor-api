@@ -5,6 +5,7 @@
  */
 package com.aoindustries.noc.monitor.common;
 
+import com.aoindustries.sql.MilliInterval;
 import java.io.Serializable;
 
 /**
@@ -36,8 +37,8 @@ public class UpsResult extends TableMultiResult implements Serializable {
     private final int extbatts;
     private final int badbatts;
     // Runtime
-    private final TimeSpan tonbatt;
-    private final TimeSpan timeleft;
+    private final MilliInterval tonbatt;
+    private final MilliInterval timeleft;
     private final float itemp;
 
     public UpsResult(
@@ -84,8 +85,8 @@ public class UpsResult extends TableMultiResult implements Serializable {
         float nombattv,
         int extbatts,
         int badbatts,
-        TimeSpan tonbatt,
-        TimeSpan timeleft,
+        MilliInterval tonbatt,
+        MilliInterval timeleft,
         float itemp
     ) {
         super(time, latency, alertLevel, null);
@@ -281,7 +282,7 @@ public class UpsResult extends TableMultiResult implements Serializable {
      *
      * @return  the TONBATT or <code>null</code> if unavailable.
      */
-    public TimeSpan getTonbatt() {
+    public MilliInterval getTonbatt() {
         return tonbatt;
     }
 
@@ -290,7 +291,7 @@ public class UpsResult extends TableMultiResult implements Serializable {
      *
      * @return  the TIMELEFT or <code>null</code> if unavailable.
      */
-    public TimeSpan getTimeleft() {
+    public MilliInterval getTimeleft() {
         return timeleft;
     }
 

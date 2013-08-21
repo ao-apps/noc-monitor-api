@@ -5,6 +5,7 @@
  */
 package com.aoindustries.noc.monitor.common;
 
+import com.aoindustries.sql.MilliInterval;
 import java.io.Serializable;
 
 /**
@@ -36,9 +37,9 @@ public class TimeResult extends TableMultiResult implements Serializable {
     }
 
     @Override
-    public TimeSpan getRowData(int index) {
+    public MilliInterval getRowData(int index) {
         switch(index) {
-            case 0: return new TimeSpan(skew);
+            case 0: return new MilliInterval(skew);
             default: throw new IndexOutOfBoundsException();
         }
     }
