@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2011 by AO Industries, Inc.,
+ * Copyright 2008-2011, 2016 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
@@ -12,18 +12,18 @@ import java.rmi.RemoteException;
  */
 public interface SingleResultNode extends Node {
 
-    /**
-     * Adds a SingleResultListener, which will be notified when new results are available.
-     */
-    void addSingleResultListener(SingleResultListener singleResultListener) throws RemoteException;
+	/**
+	 * Adds a SingleResultListener, which will be notified when new results are available.
+	 */
+	void addSingleResultListener(SingleResultListener singleResultListener) throws RemoteException;
 
-    /**
-     * Removes a SingleResultListener.
-     */
-    void removeSingleResultListener(SingleResultListener singleResultListener) throws RemoteException;
+	/**
+	 * Removes a SingleResultListener.
+	 */
+	void removeSingleResultListener(SingleResultListener singleResultListener) throws RemoteException;
 
-    /**
-     * Gets the most recently available result or <code>null</code> if unavailable.
-     */
-    SingleResult getLastResult() throws RemoteException;
+	/**
+	 * Gets the most recently available result or <code>null</code> if unavailable.
+	 */
+	SingleResult getLastResult() throws RemoteException;
 }

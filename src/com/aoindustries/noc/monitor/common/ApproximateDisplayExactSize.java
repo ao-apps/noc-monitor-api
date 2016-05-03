@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2011 by AO Industries, Inc.,
+ * Copyright 2008-2011, 2016 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
@@ -16,20 +16,20 @@ import java.io.Serializable;
  */
 final public class ApproximateDisplayExactSize implements Serializable {
 
-    private static final long serialVersionUID = 1;
+	private static final long serialVersionUID = 1;
 
-    final private long size;
+	final private long size;
 
-    public ApproximateDisplayExactSize(long size) {
-        this.size = size;
-    }
+	public ApproximateDisplayExactSize(long size) {
+		this.size = size;
+	}
 
-    public long getSize() {
-        return size;
-    }
+	public long getSize() {
+		return size;
+	}
 
-    @Override
-    public String toString() {
-        return StringUtility.getApproximateSize(size);
-    }
+	@Override
+	public String toString() {
+		return StringUtility.getApproximateSize(size);
+	}
 }

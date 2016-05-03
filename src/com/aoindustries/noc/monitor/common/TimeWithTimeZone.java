@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2011 by AO Industries, Inc.,
+ * Copyright 2008-2011, 2016 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
@@ -18,32 +18,32 @@ import java.util.TimeZone;
  */
 final public class TimeWithTimeZone implements Serializable {
 
-    private static final long serialVersionUID = 1;
+	private static final long serialVersionUID = 1;
 
-    final private long time;
-    final private TimeZone timeZone;
+	final private long time;
+	final private TimeZone timeZone;
 
-    public TimeWithTimeZone(long time, TimeZone timeZone) {
-        this.time = time;
-        this.timeZone = timeZone;
-    }
+	public TimeWithTimeZone(long time, TimeZone timeZone) {
+		this.time = time;
+		this.timeZone = timeZone;
+	}
 
-    public TimeWithTimeZone(long time) {
-        this(time, null);
-    }
+	public TimeWithTimeZone(long time) {
+		this(time, null);
+	}
 
-    public long getTime() {
-        return time;
-    }
+	public long getTime() {
+		return time;
+	}
 
-    public TimeZone getTimeZone() {
-        return timeZone;
-    }
+	public TimeZone getTimeZone() {
+		return timeZone;
+	}
 
-    @Override
-    public String toString() {
-        DateFormat df = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.LONG, ThreadLocale.get());
-        if(timeZone!=null) df.setTimeZone(timeZone);
-        return df.format(new Date(time));
-    }
+	@Override
+	public String toString() {
+		DateFormat df = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.LONG, ThreadLocale.get());
+		if(timeZone!=null) df.setTimeZone(timeZone);
+		return df.format(new Date(time));
+	}
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2011 by AO Industries, Inc.,
+ * Copyright 2008-2011, 2016 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
@@ -16,20 +16,20 @@ import java.io.Serializable;
  */
 final public class ApproximateDisplayExactBitRate implements Serializable {
 
-    private static final long serialVersionUID = 1;
+	private static final long serialVersionUID = 1;
 
-    final private long bit_rate;
+	final private long bit_rate;
 
-    public ApproximateDisplayExactBitRate(long bit_rate) {
-        this.bit_rate = bit_rate;
-    }
+	public ApproximateDisplayExactBitRate(long bit_rate) {
+		this.bit_rate = bit_rate;
+	}
 
-    public long getBitRate() {
-        return bit_rate;
-    }
+	public long getBitRate() {
+		return bit_rate;
+	}
 
-    @Override
-    public String toString() {
-        return StringUtility.getApproximateBitRate(bit_rate);
-    }
+	@Override
+	public String toString() {
+		return StringUtility.getApproximateBitRate(bit_rate);
+	}
 }

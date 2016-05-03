@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2011 by AO Industries, Inc.,
+ * Copyright 2008-2011, 2016 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
@@ -15,8 +15,8 @@ import java.rmi.RemoteException;
  */
 public interface SingleResultListener extends Remote {
 
-    /**
-     * Called when new results are available.
-     */
-    void singleResultUpdated(SingleResult singleResult) throws RemoteException;
+	/**
+	 * Called when new results are available.
+	 */
+	void singleResultUpdated(SingleResult singleResult) throws RemoteException;
 }

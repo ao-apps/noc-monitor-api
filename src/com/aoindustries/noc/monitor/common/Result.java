@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2011 by AO Industries, Inc.,
+ * Copyright 2008-2011, 2016 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
@@ -14,27 +14,27 @@ import java.io.Serializable;
  */
 abstract public class Result implements Serializable {
 
-    private static final long serialVersionUID = 1;
+	private static final long serialVersionUID = 1;
 
-    final protected long time;
-    final protected long latency;
+	final protected long time;
+	final protected long latency;
 
-    public Result(long time, long latency) {
-        this.time = time;
-        this.latency = latency;
-    }
+	public Result(long time, long latency) {
+		this.time = time;
+		this.latency = latency;
+	}
 
-    /**
-     * Gets the time this check was performed.
-     */
-    public long getTime() {
-        return time;
-    }
+	/**
+	 * Gets the time this check was performed.
+	 */
+	public long getTime() {
+		return time;
+	}
 
-    /**
-     * Gets the number of nanoseconds it took to perform the check.
-     */
-    public long getLatency() {
-        return latency;
-    }
+	/**
+	 * Gets the number of nanoseconds it took to perform the check.
+	 */
+	public long getLatency() {
+		return latency;
+	}
 }

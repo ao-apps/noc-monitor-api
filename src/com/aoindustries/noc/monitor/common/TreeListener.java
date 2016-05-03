@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2011 by AO Industries, Inc.,
+ * Copyright 2008-2011, 2016 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
@@ -16,18 +16,18 @@ import java.util.List;
  */
 public interface TreeListener extends Remote {
 
-    /**
-     * Called sometime after one or more nodes are added.
-     */
-    void nodeAdded() throws RemoteException;
+	/**
+	 * Called sometime after one or more nodes are added.
+	 */
+	void nodeAdded() throws RemoteException;
 
-    /**
-     * Called sometime after one or more nodes are removed.
-     */
-    void nodeRemoved() throws RemoteException;
+	/**
+	 * Called sometime after one or more nodes are removed.
+	 */
+	void nodeRemoved() throws RemoteException;
 
-    /**
-     * Called after one or more nodes change alert levels.
-     */
-    void nodeAlertLevelChanged(List<AlertLevelChange> changes) throws RemoteException;
+	/**
+	 * Called after one or more nodes change alert levels.
+	 */
+	void nodeAlertLevelChanged(List<AlertLevelChange> changes) throws RemoteException;
 }

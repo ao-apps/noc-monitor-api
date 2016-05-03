@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2012 by AO Industries, Inc.,
+ * Copyright 2008-2012, 2016 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
@@ -19,43 +19,43 @@ import java.io.Serializable;
  */
 abstract public class TableMultiResult extends Result implements Serializable {
 
-    private static final long serialVersionUID = 2L;
+	private static final long serialVersionUID = 2L;
 
-    final private AlertLevel alertLevel;
-    final private String error;
+	final private AlertLevel alertLevel;
+	final private String error;
 
-    /**
-     * Either error is null or rowData is null, it cannot be that both are null or both are not null.
-     */
-    public TableMultiResult(long time, long latency, AlertLevel alertLevel, String error) {
-        super(time, latency);
+	/**
+	 * Either error is null or rowData is null, it cannot be that both are null or both are not null.
+	 */
+	public TableMultiResult(long time, long latency, AlertLevel alertLevel, String error) {
+		super(time, latency);
 
-        this.alertLevel = alertLevel;
-        this.error = error;
-    }
+		this.alertLevel = alertLevel;
+		this.error = error;
+	}
 
-    /**
-     * If is an error, gets the error message or <code>null</code> for no error.
-     */
-    public String getError() {
-        return error;
-    }
+	/**
+	 * If is an error, gets the error message or <code>null</code> for no error.
+	 */
+	public String getError() {
+		return error;
+	}
 
-    /**
-     * Gets the number of data elements for this result.
-     */
-    abstract public int getRowDataSize();
+	/**
+	 * Gets the number of data elements for this result.
+	 */
+	abstract public int getRowDataSize();
 
-    /**
-     * Gets the data for one row.  This should not include the time and latency, they are implied.
-     * When there is an error, getRowData will not be checked and should return null.
-     */
-    abstract public Object getRowData(int index);
+	/**
+	 * Gets the data for one row.  This should not include the time and latency, they are implied.
+	 * When there is an error, getRowData will not be checked and should return null.
+	 */
+	abstract public Object getRowData(int index);
 
-    /**
-     * Gets the alert level for this row.
-     */
-    public AlertLevel getAlertLevel() {
-        return alertLevel;
-    }
+	/**
+	 * Gets the alert level for this row.
+	 */
+	public AlertLevel getAlertLevel() {
+		return alertLevel;
+	}
 }
