@@ -1,5 +1,5 @@
 /*
- * Copyright 2012, 2016 by AO Industries, Inc.,
+ * Copyright 2012, 2016, 2017 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
@@ -9,7 +9,7 @@ import com.aoindustries.sql.MilliInterval;
 import java.io.Serializable;
 
 /**
- * Field descriptions copied from {@link http://www.apcupsd.com/manual/manual.html#status-report-fields}
+ * Field descriptions copied from <a href="http://www.apcupsd.com/manual/manual.html#status-report-fields">http://www.apcupsd.com/manual/manual.html#status-report-fields</a>.
  *
  * @author  AO Industries, Inc.
  */
