@@ -1,5 +1,5 @@
 /*
- * Copyright 2012, 2016, 2017 by AO Industries, Inc.,
+ * Copyright 2012, 2016, 2017, 2018 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
@@ -38,6 +38,7 @@ public class UpsResult extends TableMultiResult implements Serializable {
 	private final int badbatts;
 	// Runtime
 	private final MilliInterval tonbatt;
+	private final MilliInterval cumonbatt;
 	private final MilliInterval timeleft;
 	private final float itemp;
 
@@ -63,6 +64,7 @@ public class UpsResult extends TableMultiResult implements Serializable {
 		this.extbatts = -1;
 		this.badbatts = -1;
 		this.tonbatt = null;
+		this.cumonbatt = null;
 		this.timeleft = null;
 		this.itemp = Float.NaN;
 	}
@@ -86,6 +88,7 @@ public class UpsResult extends TableMultiResult implements Serializable {
 		int extbatts,
 		int badbatts,
 		MilliInterval tonbatt,
+		MilliInterval cumonbatt,
 		MilliInterval timeleft,
 		float itemp
 	) {
@@ -105,13 +108,14 @@ public class UpsResult extends TableMultiResult implements Serializable {
 		this.extbatts = extbatts;
 		this.badbatts = badbatts;
 		this.tonbatt = tonbatt;
+		this.cumonbatt = cumonbatt;
 		this.timeleft = timeleft;
 		this.itemp = itemp;
 	}
 
 	@Override
 	public int getRowDataSize() {
-		return 11;
+		return 12;
 	}
 
 	@Override
@@ -142,8 +146,10 @@ public class UpsResult extends TableMultiResult implements Serializable {
 			case 8:
 				return tonbatt;
 			case 9:
-				return timeleft;
+				return cumonbatt;
 			case 10:
+				return timeleft;
+			case 11:
 				if(Float.isNaN(itemp)) return null;
 				return String.format("%.1f \u00B0C", itemp);
 			default: throw new IndexOutOfBoundsException();
@@ -284,6 +290,15 @@ public class UpsResult extends TableMultiResult implements Serializable {
 	 */
 	public MilliInterval getTonbatt() {
 		return tonbatt;
+	}
+
+	/**
+	 * Gets the cumulative time on batteries since apcupsd started.
+	 *
+	 * @return  the CUMONBATT or <code>null</code> if unavailable.
+	 */
+	public MilliInterval getCumonbatt() {
+		return cumonbatt;
 	}
 
 	/**
