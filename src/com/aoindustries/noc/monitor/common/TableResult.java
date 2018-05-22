@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2011, 2016 by AO Industries, Inc.,
+ * Copyright 2008-2011, 2016, 2018 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
@@ -7,6 +7,7 @@ package com.aoindustries.noc.monitor.common;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Encapsulates the results that may be in a table, including table columns headers and rows.  Each row has a different alert level.
@@ -20,16 +21,23 @@ final public class TableResult extends Result implements Serializable {
 	final private boolean isError;
 	final private int columns;
 	final private int rows;
-	final private List<String> columnHeaders;
-	final private List<?> tableData;
+	final private SerializableFunction<Locale,? extends List<String>> columnHeaders;
+	final private SerializableFunction<Locale,? extends List<?>> tableData;
 	final private List<AlertLevel> alertLevels;
 
-	public TableResult(long time, long latency, boolean isError, int columns, int rows, List<String> columnHeaders, List<?> tableData, List<AlertLevel> alertLevels) {
+	public TableResult(
+		long time,
+		long latency,
+		boolean isError,
+		int columns,
+		int rows,
+		SerializableFunction<Locale,? extends List<String>> columnHeaders,
+		SerializableFunction<Locale,? extends List<?>> tableData,
+		List<AlertLevel> alertLevels
+	) {
 		super(time, latency);
 
-		if(columns!=columnHeaders.size()) throw new AssertionError("columns!=columnHeaders.size()");
-		if((rows*columns)!=tableData.size()) throw new AssertionError("(rows*columns)!=tableData.size()");
-		if(rows!=alertLevels.size()) throw new AssertionError("rows!=alertLevels.size()");
+		if(rows != alertLevels.size()) throw new AssertionError("rows != alertLevels.size()");
 
 		this.isError = isError;
 		this.columns = columns;
@@ -63,8 +71,10 @@ final public class TableResult extends Result implements Serializable {
 	/**
 	 * Gets the column headers for the table.
 	 */
-	public List<String> getColumnHeaders() {
-		return columnHeaders;
+	public List<String> getColumnHeaders(Locale locale) {
+		List<String> headers = columnHeaders.apply(locale);
+		if(columns != headers.size()) throw new AssertionError("columns != headers.size()");
+		return headers;
 	}
 
 	/**
@@ -76,8 +86,10 @@ final public class TableResult extends Result implements Serializable {
 	 * Object cellData = tableData.get(row*columns + column);
 	 * </pre>
 	 */
-	public List<?> getTableData() {
-		return tableData;
+	public List<?> getTableData(Locale locale) {
+		List<?> td = tableData.apply(locale);
+		if((rows*columns) != td.size()) throw new AssertionError("(rows*columns) != tc.size()");
+		return td;
 	}
 
 	/**
