@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2011, 2016 by AO Industries, Inc.,
+ * Copyright 2008-2011, 2016, 2018 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
@@ -10,6 +10,8 @@ package com.aoindustries.noc.monitor.common;
  *
  * @author  AO Industries, Inc.
  */
+// Matches enum com.aoindustries.aoserv.client.AlertLevel
+// Matches aoserv-master-db/aoindustries/monitoring/AlertLevel-type.sql
 public enum AlertLevel {
 	NONE,
 	LOW,
