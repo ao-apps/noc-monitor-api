@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2012, 2016 by AO Industries, Inc.,
+ * Copyright 2008-2012, 2016, 2018 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
@@ -36,6 +36,11 @@ public interface Node extends Remote {
 	 * Gets the current alert message or <code>null</code> for none.
 	 */
 	String getAlertMessage() throws RemoteException;
+
+	/**
+	 * Gets the alert category for this node.
+	 */
+	AlertCategory getAlertCategory() throws RemoteException;
 
 	/**
 	 * Gets the flag indicating the node allows children.  This is primarily

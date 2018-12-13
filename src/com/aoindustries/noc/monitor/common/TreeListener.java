@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2011, 2016 by AO Industries, Inc.,
+ * Copyright 2008-2011, 2016, 2018 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
@@ -29,5 +29,5 @@ public interface TreeListener extends Remote {
 	/**
 	 * Called after one or more nodes change alert levels.
 	 */
-	void nodeAlertLevelChanged(List<AlertLevelChange> changes) throws RemoteException;
+	void nodeAlertChanged(List<AlertChange> changes) throws RemoteException;
 }

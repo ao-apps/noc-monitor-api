@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2011, 2016 by AO Industries, Inc.,
+ * Copyright 2008-2011, 2016, 2018 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
@@ -8,26 +8,38 @@ package com.aoindustries.noc.monitor.common;
 import java.io.Serializable;
 
 /**
- * Encapsulates the results of changing alert level.
+ * Encapsulates the results of changing alert level or category.
  *
  * @author  AO Industries, Inc.
  */
-final public class AlertLevelChange implements Serializable {
+final public class AlertChange implements Serializable {
 
-	private static final long serialVersionUID = 1;
+	private static final long serialVersionUID = 2;
 
 	final private Node node;
 	final private String nodeFullPath;
 	final private AlertLevel oldAlertLevel;
 	final private AlertLevel newAlertLevel;
 	final private String alertMessage;
+	final private AlertCategory oldAlertCategory;
+	final private AlertCategory newAlertCategory;
 
-	public AlertLevelChange(Node node, String nodeFullPath, AlertLevel oldAlertLevel, AlertLevel newAlertLevel, String alertMessage) {
+	public AlertChange(
+		Node node,
+		String nodeFullPath,
+		AlertLevel oldAlertLevel,
+		AlertLevel newAlertLevel,
+		String alertMessage,
+		AlertCategory oldAlertCategory,
+		AlertCategory newAlertCategory
+	) {
 		this.node = node;
 		this.nodeFullPath = nodeFullPath;
 		this.oldAlertLevel = oldAlertLevel;
 		this.newAlertLevel = newAlertLevel;
 		this.alertMessage = alertMessage;
+		this.oldAlertCategory = oldAlertCategory;
+		this.newAlertCategory = newAlertCategory;
 	}
 
 	/**
@@ -63,5 +75,19 @@ final public class AlertLevelChange implements Serializable {
 	 */
 	public String getAlertMessage() {
 		return alertMessage;
+	}
+
+	/**
+	 * Gets the old alert category.
+	 */
+	public AlertCategory getOldAlertCategory() {
+		return oldAlertCategory;
+	}
+
+	/**
+	 * Gets the new alert category.
+	 */
+	public AlertCategory getNewAlertCategory() {
+		return newAlertCategory;
 	}
 }

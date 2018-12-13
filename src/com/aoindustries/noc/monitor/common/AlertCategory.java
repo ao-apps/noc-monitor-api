@@ -11,15 +11,20 @@ import com.aoindustries.aoserv.client.ticket.TicketType;
 /**
  * The different alert categories in the system.  The category can affect
  * which sound is played, for example.
+ * <p>
+ * These categories are in a priority order.  When two alerts exist at the same
+ * level, but in different categories, the higher priority category is used
+ * for audible notifications.
+ * </p>
  *
  * @author  AO Industries, Inc.
  */
 public enum AlertCategory {
 
 	/**
-	 * @see  TicketType#CONTACT
+	 * Something that is otherwise uncategorized.
 	 */
-	CONTACT,
+	UNCATEGORIZED,
 
 	/**
 	 * Alerts to incoming email messages not otherwise moved into the ticket system.
@@ -27,17 +32,9 @@ public enum AlertCategory {
 	EMAIL,
 
 	/**
-	 * Alerts coming from the monitoring system.
-	 * <p>
-	 * TODO: Should this be split to infrastructure, virtual, and other?
-	 * </p>
+	 * @see  TicketType#CONTACT
 	 */
-	MONITORING,
-
-	/**
-	 * @see  Request
-	 */
-	SIGNUP,
+	CONTACT,
 
 	/**
 	 * @see  TicketType#SUPPORT
@@ -45,7 +42,15 @@ public enum AlertCategory {
 	SUPPORT,
 
 	/**
-	 * Something that is otherwise uncategorized.
+	 * @see  Request
 	 */
-	UNCATEGORIZED
+	SIGNUP,
+
+	/**
+	 * Alerts coming from the monitoring system.
+	 * <p>
+	 * TODO: Should this be split to infrastructure, virtual, and other?
+	 * </p>
+	 */
+	MONITORING
 }
