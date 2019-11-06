@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2011, 2016, 2017, 2018 by AO Industries, Inc.,
+ * Copyright 2008-2011, 2016, 2017, 2018, 2019 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
@@ -20,7 +20,7 @@ public interface Monitor extends Remote {
 	/**
 	 * The ports used for RMI communication.
 	 */
-	public static final int DEFAULT_RMI_CLIENT_PORT = 4585;
+	public static final int DEFAULT_RMI_CLIENT_PORT = 4586; // 4585 used by mobile server
 	public static final int DEFAULT_RMI_SERVER_PORT = 4584;
 
 	/**
