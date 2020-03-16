@@ -1,11 +1,11 @@
 /*
- * Copyright 2009-2012, 2016 by AO Industries, Inc.,
+ * Copyright 2009-2012, 2016, 2020 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
 package com.aoindustries.noc.monitor.common;
 
-import com.aoindustries.util.StringUtility;
+import com.aoindustries.lang.Strings;
 import java.io.Serializable;
 
 /**
@@ -79,13 +79,13 @@ public class NetDeviceBitRateResult extends TableMultiResult implements Serializ
 			case 3: return rxPacketsPerSecond==-1 ? null : new ApproximateDisplayExactBitRate(rxPacketsPerSecond);
 			case 4: {
 				return
-					(bpsLow==-1 ? "-" : StringUtility.getApproximateBitRate(bpsLow))
+					(bpsLow==-1 ? "-" : Strings.getApproximateBitRate(bpsLow))
 					+ " / "
-					+ (bpsMedium==-1 ? "-" : StringUtility.getApproximateBitRate(bpsMedium))
+					+ (bpsMedium==-1 ? "-" : Strings.getApproximateBitRate(bpsMedium))
 					+ " / "
-					+ (bpsHigh==-1 ? "-" : StringUtility.getApproximateBitRate(bpsHigh))
+					+ (bpsHigh==-1 ? "-" : Strings.getApproximateBitRate(bpsHigh))
 					+ " / "
-					+ (bpsCritical==-1 ? "-" : StringUtility.getApproximateBitRate(bpsCritical))
+					+ (bpsCritical==-1 ? "-" : Strings.getApproximateBitRate(bpsCritical))
 				;
 			}
 			default: throw new IndexOutOfBoundsException();

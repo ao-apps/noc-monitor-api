@@ -1,11 +1,11 @@
 /*
- * Copyright 2008-2011, 2016 by AO Industries, Inc.,
+ * Copyright 2008-2011, 2016, 2020 by AO Industries, Inc.,
  * 7262 Bull Pen Cir, Mobile, Alabama, 36695, U.S.A.
  * All rights reserved.
  */
 package com.aoindustries.noc.monitor.common;
 
-import com.aoindustries.util.StringUtility;
+import com.aoindustries.lang.Strings;
 import java.io.Serializable;
 
 /**
@@ -30,6 +30,6 @@ final public class ApproximateDisplayExactBitRate implements Serializable {
 
 	@Override
 	public String toString() {
-		return StringUtility.getApproximateBitRate(bit_rate);
+		return Strings.getApproximateBitRate(bit_rate);
 	}
 }
