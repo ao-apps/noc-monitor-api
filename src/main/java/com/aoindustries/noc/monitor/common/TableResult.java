@@ -97,7 +97,7 @@ final public class TableResult extends Result implements Serializable {
 	/**
 	 * Gets the table data, each element may be found with the expression:
 	 * <pre>
-	 * List<?> tableData = tableResult.getTableData();
+	 * List&lt;?&gt; tableData = tableResult.getTableData();
 	 * int columns = tableResult.getColumns();
 	 * 
 	 * Object cellData = tableData.get(row*columns + column);

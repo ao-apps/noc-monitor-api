@@ -28,10 +28,12 @@ import java.io.Serializable;
  * Encapsulates a single result, this will be a single row in the
  * table showing the current and history.
  *
- * http://codeguru.earthweb.com/java/articles/139.shtml
- * http://74.125.45.104/search?q=cache:La1aeG_jfaIJ:www.experts-exchange.com/Programming/Languages/Java/Q_22583929.html+jtable+merge+cells&hl=en&client=firefox-a&gl=us&strip=1
- * http://quicktable.org/discussion/cutecast/cutecast.pl?session=CMwYr6oQ8NxQu3SZ83YhXc1KpO&action=&forum=1&thread=121&user=&query=&msgid=&page=&sort=&do=&key=&others=
- * 
+ * <ul>
+ * <li><a href="http://codeguru.earthweb.com/java/articles/139.shtml">http://codeguru.earthweb.com/java/articles/139.shtml</a></li>
+ * <li><a href="http://74.125.45.104/search?q=cache:La1aeG_jfaIJ:www.experts-exchange.com/Programming/Languages/Java/Q_22583929.html+jtable+merge+cells&amp;hl=en&amp;client=firefox-a&amp;gl=us&amp;strip=1">http://74.125.45.104/search?q=cache:La1aeG_jfaIJ:www.experts-exchange.com/Programming/Languages/Java/Q_22583929.html+jtable+merge+cells&amp;hl=en&amp;client=firefox-a&amp;gl=us&amp;strip=1</a></li>
+ * <li><a href="http://quicktable.org/discussion/cutecast/cutecast.pl?session=CMwYr6oQ8NxQu3SZ83YhXc1KpO&amp;action=&amp;forum=1&amp;thread=121&amp;user=&amp;query=&amp;msgid=&amp;page=&amp;sort=&amp;do=&amp;key=&amp;others=">http://quicktable.org/discussion/cutecast/cutecast.pl?session=CMwYr6oQ8NxQu3SZ83YhXc1KpO&amp;action=&amp;forum=1&amp;thread=121&amp;user=&amp;query=&amp;msgid=&amp;page=&amp;sort=&amp;do=&amp;key=&amp;others=</a></li>
+ * </ul>
+ *
  * @author  AO Industries, Inc.
  */
 abstract public class TableMultiResult extends Result implements Serializable {
