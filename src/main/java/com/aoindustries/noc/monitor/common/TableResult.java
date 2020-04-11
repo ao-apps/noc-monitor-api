@@ -22,6 +22,7 @@
  */
 package com.aoindustries.noc.monitor.common;
 
+import com.aoindustries.util.function.SerializableFunction;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Locale;
