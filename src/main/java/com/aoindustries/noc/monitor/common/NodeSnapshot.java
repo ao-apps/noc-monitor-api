@@ -100,6 +100,7 @@ final public class NodeSnapshot implements Serializable {
 	/**
 	 * @see Node#getChildren
 	 */
+	@SuppressWarnings("ReturnOfCollectionOrArrayField") // Returning unmodifiable
 	public List<NodeSnapshot> getChildren() {
 		return children;
 	}

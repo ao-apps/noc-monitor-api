@@ -43,6 +43,9 @@ final public class TableResult extends Result implements Serializable {
 	final private SerializableFunction<Locale,? extends List<?>> tableData;
 	final private List<AlertLevel> alertLevels;
 
+	/**
+	 * @param  alertLevels  Must be unmodifiable - no defensive copy is made
+	 */
 	public TableResult(
 		long time,
 		long latency,
@@ -113,6 +116,7 @@ final public class TableResult extends Result implements Serializable {
 	/**
 	 * Gets the alert level on a per-row basis.
 	 */
+	@SuppressWarnings("ReturnOfCollectionOrArrayField") // Returning unmodifiable
 	public List<AlertLevel> getAlertLevels() {
 		return alertLevels;
 	}
