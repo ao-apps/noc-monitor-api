@@ -76,9 +76,9 @@ along with noc-monitor-api.  If not, see <http://www.gnu.org/licenses />.
 											<outputDirectory>${project.build.directory}/offlineLinks/com.aoindustries/ao-lang</outputDirectory>
 										</artifactItem>
 										<artifactItem>
-											<groupId>com.aoindustries</groupId><artifactId>aocode-public</artifactId>
+											<groupId>com.aoindustries</groupId><artifactId>ao-sql</artifactId>
 											<classifier>javadoc</classifier><includes>element-list, package-list</includes>
-											<outputDirectory>${project.build.directory}/offlineLinks/com.aoindustries/aocode-public</outputDirectory>
+											<outputDirectory>${project.build.directory}/offlineLinks/com.aoindustries/ao-sql</outputDirectory>
 										</artifactItem>
 										<artifactItem>
 											<groupId>com.aoindustries</groupId><artifactId>aoserv-client</artifactId>
@@ -100,8 +100,8 @@ along with noc-monitor-api.  If not, see <http://www.gnu.org/licenses />.
 									<location>${project.build.directory}/offlineLinks/com.aoindustries/ao-lang</location>
 								</offlineLink>
 								<offlineLink>
-									<url>https://aoindustries.com/aocode-public/apidocs/</url>
-									<location>${project.build.directory}/offlineLinks/com.aoindustries/aocode-public</location>
+									<url>https://aoindustries.com/ao-sql/apidocs/</url>
+									<location>${project.build.directory}/offlineLinks/com.aoindustries/ao-sql</location>
 								</offlineLink>
 								<offlineLink>
 									<url>https://aoindustries.com/aoserv/client/apidocs/</url>
@@ -127,7 +127,7 @@ along with noc-monitor-api.  If not, see <http://www.gnu.org/licenses />.
 				<groupId>com.aoindustries</groupId><artifactId>ao-lang</artifactId><version>4.6.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
 			</dependency>
 			<dependency>
-				<groupId>com.aoindustries</groupId><artifactId>aocode-public</artifactId><version>4.3.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+				<groupId>com.aoindustries</groupId><artifactId>ao-sql</artifactId><version>0.1.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
 			</dependency>
 			<dependency>
 				<groupId>com.aoindustries</groupId><artifactId>aoserv-client</artifactId><version>1.84.12-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
@@ -145,6 +145,9 @@ along with noc-monitor-api.  If not, see <http://www.gnu.org/licenses />.
 			<dependency>
 				<groupId>com.aoindustries</groupId><artifactId>ao-tlds</artifactId><version>1.2.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
 			</dependency>
+			<dependency>
+				<groupId>com.aoindustries</groupId><artifactId>aocode-public</artifactId><version>4.3.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -154,7 +157,7 @@ along with noc-monitor-api.  If not, see <http://www.gnu.org/licenses />.
 			<groupId>com.aoindustries</groupId><artifactId>ao-lang</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.aoindustries</groupId><artifactId>aocode-public</artifactId>
+			<groupId>com.aoindustries</groupId><artifactId>ao-sql</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.aoindustries</groupId><artifactId>aoserv-client</artifactId>
