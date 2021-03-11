@@ -1,6 +1,6 @@
 /*
  * noc-monitor-api - API of Network Operations Center Monitoring.
- * Copyright (C) 2008-2011, 2016, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2008-2011, 2016, 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -39,8 +39,8 @@ final public class TableResult extends Result implements Serializable {
 	final private boolean isError;
 	final private int columns;
 	final private int rows;
-	final private SerializableFunction<Locale,? extends List<String>> columnHeaders;
-	final private SerializableFunction<Locale,? extends List<?>> tableData;
+	final private SerializableFunction<Locale, ? extends List<String>> columnHeaders;
+	final private SerializableFunction<Locale, ? extends List<?>> tableData;
 	final private List<AlertLevel> alertLevels;
 
 	/**
@@ -52,8 +52,8 @@ final public class TableResult extends Result implements Serializable {
 		boolean isError,
 		int columns,
 		int rows,
-		SerializableFunction<Locale,? extends List<String>> columnHeaders,
-		SerializableFunction<Locale,? extends List<?>> tableData,
+		SerializableFunction<Locale, ? extends List<String>> columnHeaders,
+		SerializableFunction<Locale, ? extends List<?>> tableData,
 		List<AlertLevel> alertLevels
 	) {
 		super(time, latency);

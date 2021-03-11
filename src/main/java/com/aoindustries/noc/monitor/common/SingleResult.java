@@ -1,6 +1,6 @@
 /*
  * noc-monitor-api - API of Network Operations Center Monitoring.
- * Copyright (C) 2008-2011, 2016, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2008-2011, 2016, 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -35,10 +35,10 @@ final public class SingleResult extends Result implements Serializable {
 
 	private static final long serialVersionUID = 2;
 
-	final private SerializableFunction<Locale,String> error;
+	final private SerializableFunction<Locale, String> error;
 	final private String report;
 
-	public SingleResult(long time, long latency, SerializableFunction<Locale,String> error, String report) {
+	public SingleResult(long time, long latency, SerializableFunction<Locale, String> error, String report) {
 		super(time, latency);
 
 		if(error==null && report==null) throw new IllegalArgumentException("error and report may not both be null");
@@ -51,7 +51,7 @@ final public class SingleResult extends Result implements Serializable {
 	/**
 	 * Gets the error or <code>null</code> for none.
 	 */
-	public SerializableFunction<Locale,String> getError() {
+	public SerializableFunction<Locale, String> getError() {
 		return error;
 	}
 
