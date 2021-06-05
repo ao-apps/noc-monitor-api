@@ -1,6 +1,6 @@
 /*
  * noc-monitor-api - API of Network Operations Center Monitoring.
- * Copyright (C) 2008-2011, 2016, 2020  AO Industries, Inc.
+ * Copyright (C) 2008-2011, 2016, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,7 +22,7 @@
  */
 package com.aoindustries.noc.monitor.common;
 
-import com.aoindustries.lang.Strings;
+import com.aoapps.lang.Strings;
 import java.io.Serializable;
 
 /**
