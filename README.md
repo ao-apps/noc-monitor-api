@@ -9,6 +9,12 @@
 
 [![Build](https://github.com/aoindustries/noc-monitor-api/workflows/Build/badge.svg?branch=master)](https://github.com/aoindustries/noc-monitor-api/actions?query=workflow%3ABuild)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.aoindustries/noc-monitor-api/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.aoindustries/noc-monitor-api)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps.platform%3Anoc-monitor-api&metric=alert_status)](https://sonarcloud.io/dashboard?branch=master&id=com.aoapps.platform%3Anoc-monitor-api)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps.platform%3Anoc-monitor-api&metric=ncloc)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps.platform%3Anoc-monitor-api&metric=ncloc)  
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps.platform%3Anoc-monitor-api&metric=reliability_rating)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps.platform%3Anoc-monitor-api&metric=Reliability)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps.platform%3Anoc-monitor-api&metric=security_rating)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps.platform%3Anoc-monitor-api&metric=Security)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps.platform%3Anoc-monitor-api&metric=sqale_rating)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps.platform%3Anoc-monitor-api&metric=Maintainability)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps.platform%3Anoc-monitor-api&metric=coverage)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps.platform%3Anoc-monitor-api&metric=Coverage)
 
 API of [Network Operations Center Monitoring](https://github.com/aoindustries/noc-monitor).
 
