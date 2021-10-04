@@ -33,12 +33,12 @@ import java.util.TimeZone;
  *
  * @author  AO Industries, Inc.
  */
-final public class TimeWithTimeZone implements Serializable {
+public final class TimeWithTimeZone implements Serializable {
 
 	private static final long serialVersionUID = 1;
 
-	final private long time;
-	final private TimeZone timeZone;
+	private final long time;
+	private final TimeZone timeZone;
 
 	public TimeWithTimeZone(long time, TimeZone timeZone) {
 		this.time = time;

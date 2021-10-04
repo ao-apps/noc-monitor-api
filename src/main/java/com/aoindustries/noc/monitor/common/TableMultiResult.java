@@ -1,6 +1,6 @@
 /*
  * noc-monitor-api - API of Network Operations Center Monitoring.
- * Copyright (C) 2008-2012, 2016, 2020  AO Industries, Inc.
+ * Copyright (C) 2008-2012, 2016, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -36,12 +36,12 @@ import java.io.Serializable;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class TableMultiResult extends Result implements Serializable {
+public abstract class TableMultiResult extends Result implements Serializable {
 
 	private static final long serialVersionUID = 2L;
 
-	final private AlertLevel alertLevel;
-	final private String error;
+	private final AlertLevel alertLevel;
+	private final String error;
 
 	/**
 	 * Either error is null or rowData is null, it cannot be that both are null or both are not null.
@@ -63,13 +63,13 @@ abstract public class TableMultiResult extends Result implements Serializable {
 	/**
 	 * Gets the number of data elements for this result.
 	 */
-	abstract public int getRowDataSize();
+	public abstract int getRowDataSize();
 
 	/**
 	 * Gets the data for one row.  This should not include the time and latency, they are implied.
 	 * When there is an error, getRowData will not be checked and should return null.
 	 */
-	abstract public Object getRowData(int index);
+	public abstract Object getRowData(int index);
 
 	/**
 	 * Gets the alert level for this row.

@@ -32,16 +32,16 @@ import java.util.Locale;
  *
  * @author  AO Industries, Inc.
  */
-final public class TableResult extends Result implements Serializable {
+public final class TableResult extends Result implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	final private boolean isError;
-	final private int columns;
-	final private int rows;
-	final private SerializableFunction<Locale, ? extends List<String>> columnHeaders;
-	final private SerializableFunction<Locale, ? extends List<?>> tableData;
-	final private List<AlertLevel> alertLevels;
+	private final boolean isError;
+	private final int columns;
+	private final int rows;
+	private final SerializableFunction<Locale, ? extends List<String>> columnHeaders;
+	private final SerializableFunction<Locale, ? extends List<?>> tableData;
+	private final List<AlertLevel> alertLevels;
 
 	/**
 	 * @param  alertLevels  Must be unmodifiable - no defensive copy is made

@@ -1,6 +1,6 @@
 /*
  * noc-monitor-api - API of Network Operations Center Monitoring.
- * Copyright (C) 2008-2011, 2016, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2008-2011, 2016, 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -29,17 +29,17 @@ import java.io.Serializable;
  *
  * @author  AO Industries, Inc.
  */
-final public class AlertChange implements Serializable {
+public final class AlertChange implements Serializable {
 
 	private static final long serialVersionUID = 2;
 
-	final private Node node;
-	final private String nodeFullPath;
-	final private AlertLevel oldAlertLevel;
-	final private AlertLevel newAlertLevel;
-	final private String alertMessage;
-	final private AlertCategory oldAlertCategory;
-	final private AlertCategory newAlertCategory;
+	private final Node node;
+	private final String nodeFullPath;
+	private final AlertLevel oldAlertLevel;
+	private final AlertLevel newAlertLevel;
+	private final String alertMessage;
+	private final AlertCategory oldAlertCategory;
+	private final AlertCategory newAlertCategory;
 
 	public AlertChange(
 		Node node,

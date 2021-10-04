@@ -31,11 +31,11 @@ import java.io.Serializable;
  *
  * @author  AO Industries, Inc.
  */
-final public class ApproximateDisplayExactBitRate implements Serializable {
+public final class ApproximateDisplayExactBitRate implements Serializable {
 
 	private static final long serialVersionUID = 1;
 
-	final private long bit_rate;
+	private final long bit_rate;
 
 	public ApproximateDisplayExactBitRate(long bit_rate) {
 		this.bit_rate = bit_rate;

@@ -31,11 +31,11 @@ import java.io.Serializable;
  *
  * @author  AO Industries, Inc.
  */
-final public class ApproximateDisplayExactSize implements Serializable {
+public final class ApproximateDisplayExactSize implements Serializable {
 
 	private static final long serialVersionUID = 1;
 
-	final private long size;
+	private final long size;
 
 	public ApproximateDisplayExactSize(long size) {
 		this.size = size;

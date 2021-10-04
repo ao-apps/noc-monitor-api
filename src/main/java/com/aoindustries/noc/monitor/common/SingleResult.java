@@ -31,12 +31,12 @@ import java.util.Locale;
  *
  * @author  AO Industries, Inc.
  */
-final public class SingleResult extends Result implements Serializable {
+public final class SingleResult extends Result implements Serializable {
 
 	private static final long serialVersionUID = 2;
 
-	final private SerializableFunction<Locale, String> error;
-	final private String report;
+	private final SerializableFunction<Locale, String> error;
+	private final String report;
 
 	public SingleResult(long time, long latency, SerializableFunction<Locale, String> error, String report) {
 		super(time, latency);

@@ -1,6 +1,6 @@
 /*
  * noc-monitor-api - API of Network Operations Center Monitoring.
- * Copyright (C) 2008-2011, 2016, 2020  AO Industries, Inc.
+ * Copyright (C) 2008-2011, 2016, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -29,12 +29,12 @@ import java.io.Serializable;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class Result implements Serializable {
+public abstract class Result implements Serializable {
 
 	private static final long serialVersionUID = 1;
 
-	final protected long time;
-	final protected long latency;
+	protected final long time;
+	protected final long latency;
 
 	public Result(long time, long latency) {
 		this.time = time;

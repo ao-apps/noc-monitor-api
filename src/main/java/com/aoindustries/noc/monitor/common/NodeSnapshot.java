@@ -1,6 +1,6 @@
 /*
  * noc-monitor-api - API of Network Operations Center Monitoring.
- * Copyright (C) 2008-2011, 2016, 2020  AO Industries, Inc.
+ * Copyright (C) 2008-2011, 2016, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -36,17 +36,17 @@ import java.util.List;
  *
  * @author  AO Industries, Inc.
  */
-final public class NodeSnapshot implements Serializable {
+public final class NodeSnapshot implements Serializable {
 
 	private static final long serialVersionUID = 1;
 
-	final private NodeSnapshot parent;
+	private final NodeSnapshot parent;
 	private Node node;
-	final private List<NodeSnapshot> children;
-	final private AlertLevel alertLevel;
-	final private String alertMessage;
-	final private boolean allowsChildren;
-	final private String label;
+	private final List<NodeSnapshot> children;
+	private final AlertLevel alertLevel;
+	private final String alertMessage;
+	private final boolean allowsChildren;
+	private final String label;
 
 	/**
 	 * Recursively obtains the snapshot of the provided node.
