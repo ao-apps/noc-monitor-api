@@ -75,20 +75,20 @@ along with noc-monitor-api.  If not, see <http://www.gnu.org/licenses />.
 	</developers>
 
 	<scm>
-		<connection>scm:git:git://github.com/aoindustries/noc-monitor-api.git</connection>
-		<developerConnection>scm:git:git@github.com:aoindustries/noc-monitor-api.git</developerConnection>
-		<url>https://github.com/aoindustries/noc-monitor-api</url>
+		<connection>scm:git:git://github.com/ao-apps/noc-monitor-api.git</connection>
+		<developerConnection>scm:git:git@github.com:ao-apps/noc-monitor-api.git</developerConnection>
+		<url>https://github.com/ao-apps/noc-monitor-api</url>
 		<tag>HEAD</tag>
 	</scm>
 
 	<issueManagement>
 		<system>GitHub Issues</system>
-		<url>https://github.com/aoindustries/noc-monitor-api/issues</url>
+		<url>https://github.com/ao-apps/noc-monitor-api/issues</url>
 	</issueManagement>
 
 	<ciManagement>
 		<system>GitHub Actions</system>
-		<url>https://github.com/aoindustries/noc-monitor-api/actions</url>
+		<url>https://github.com/ao-apps/noc-monitor-api/actions</url>
 	</ciManagement>
 
 	<repositories>
