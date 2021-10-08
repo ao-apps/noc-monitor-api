@@ -46,7 +46,7 @@ public abstract class TableMultiResult extends Result implements Serializable {
 	/**
 	 * Either error is null or rowData is null, it cannot be that both are null or both are not null.
 	 */
-	public TableMultiResult(long time, long latency, AlertLevel alertLevel, String error) {
+	protected TableMultiResult(long time, long latency, AlertLevel alertLevel, String error) {
 		super(time, latency);
 
 		this.alertLevel = alertLevel;

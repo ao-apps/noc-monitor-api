@@ -36,7 +36,7 @@ public abstract class Result implements Serializable {
 	protected final long time;
 	protected final long latency;
 
-	public Result(long time, long latency) {
+	protected Result(long time, long latency) {
 		this.time = time;
 		this.latency = latency;
 	}
