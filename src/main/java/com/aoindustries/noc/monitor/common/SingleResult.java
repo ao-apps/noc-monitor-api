@@ -34,32 +34,36 @@ import java.util.Locale;
  */
 public final class SingleResult extends Result implements Serializable {
 
-	private static final long serialVersionUID = 2;
+  private static final long serialVersionUID = 2;
 
-	private final SerializableFunction<Locale, String> error;
-	private final String report;
+  private final SerializableFunction<Locale, String> error;
+  private final String report;
 
-	public SingleResult(long time, long latency, SerializableFunction<Locale, String> error, String report) {
-		super(time, latency);
+  public SingleResult(long time, long latency, SerializableFunction<Locale, String> error, String report) {
+    super(time, latency);
 
-		if(error==null && report==null) throw new IllegalArgumentException("error and report may not both be null");
-		if(error!=null && report!=null) throw new IllegalArgumentException("error and report may not both be non-null");
+    if (error == null && report == null) {
+      throw new IllegalArgumentException("error and report may not both be null");
+    }
+    if (error != null && report != null) {
+      throw new IllegalArgumentException("error and report may not both be non-null");
+    }
 
-		this.error = error;
-		this.report = report;
-	}
+    this.error = error;
+    this.report = report;
+  }
 
-	/**
-	 * Gets the error or <code>null</code> for none.
-	 */
-	public SerializableFunction<Locale, String> getError() {
-		return error;
-	}
+  /**
+   * Gets the error or <code>null</code> for none.
+   */
+  public SerializableFunction<Locale, String> getError() {
+    return error;
+  }
 
-	/**
-	 * Gets the raw data received from the server.
-	 */
-	public String getReport() {
-		return report;
-	}
+  /**
+   * Gets the raw data received from the server.
+   */
+  public String getReport() {
+    return report;
+  }
 }

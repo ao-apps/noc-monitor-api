@@ -34,20 +34,20 @@ import java.io.Serializable;
  */
 public final class ApproximateDisplayExactSize implements Serializable {
 
-	private static final long serialVersionUID = 1;
+  private static final long serialVersionUID = 1;
 
-	private final long size;
+  private final long size;
 
-	public ApproximateDisplayExactSize(long size) {
-		this.size = size;
-	}
+  public ApproximateDisplayExactSize(long size) {
+    this.size = size;
+  }
 
-	public long getSize() {
-		return size;
-	}
+  public long getSize() {
+    return size;
+  }
 
-	@Override
-	public String toString() {
-		return Strings.getApproximateSize(size);
-	}
+  @Override
+  public String toString() {
+    return Strings.getApproximateSize(size);
+  }
 }

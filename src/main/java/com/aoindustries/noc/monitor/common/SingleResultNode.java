@@ -30,18 +30,18 @@ import java.rmi.RemoteException;
  */
 public interface SingleResultNode extends Node {
 
-	/**
-	 * Adds a SingleResultListener, which will be notified when new results are available.
-	 */
-	void addSingleResultListener(SingleResultListener singleResultListener) throws RemoteException;
+  /**
+   * Adds a SingleResultListener, which will be notified when new results are available.
+   */
+  void addSingleResultListener(SingleResultListener singleResultListener) throws RemoteException;
 
-	/**
-	 * Removes a SingleResultListener.
-	 */
-	void removeSingleResultListener(SingleResultListener singleResultListener) throws RemoteException;
+  /**
+   * Removes a SingleResultListener.
+   */
+  void removeSingleResultListener(SingleResultListener singleResultListener) throws RemoteException;
 
-	/**
-	 * Gets the most recently available result or <code>null</code> if unavailable.
-	 */
-	SingleResult getLastResult() throws RemoteException;
+  /**
+   * Gets the most recently available result or <code>null</code> if unavailable.
+   */
+  SingleResult getLastResult() throws RemoteException;
 }

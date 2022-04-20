@@ -30,18 +30,18 @@ import java.rmi.RemoteException;
  */
 public interface TableResultNode extends Node {
 
-	/**
-	 * Adds a TableResultListener, which will be notified when new results are available.
-	 */
-	void addTableResultListener(TableResultListener tableResultListener) throws RemoteException;
+  /**
+   * Adds a TableResultListener, which will be notified when new results are available.
+   */
+  void addTableResultListener(TableResultListener tableResultListener) throws RemoteException;
 
-	/**
-	 * Removes a TableResultListener.
-	 */
-	void removeTableResultListener(TableResultListener tableResultListener) throws RemoteException;
+  /**
+   * Removes a TableResultListener.
+   */
+  void removeTableResultListener(TableResultListener tableResultListener) throws RemoteException;
 
-	/**
-	 * Gets the most recently available result or <code>null</code> if unavailable.
-	 */
-	TableResult getLastResult() throws RemoteException;
+  /**
+   * Gets the most recently available result or <code>null</code> if unavailable.
+   */
+  TableResult getLastResult() throws RemoteException;
 }

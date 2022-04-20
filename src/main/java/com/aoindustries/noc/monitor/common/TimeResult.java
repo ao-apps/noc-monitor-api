@@ -31,34 +31,34 @@ import java.io.Serializable;
  */
 public class TimeResult extends TableMultiResult implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-	private final long skew;
+  private final long skew;
 
-	public TimeResult(long time, long latency, AlertLevel alertLevel, String error) {
-		super(time, latency, alertLevel, error);
-		this.skew = Long.MIN_VALUE;
-	}
+  public TimeResult(long time, long latency, AlertLevel alertLevel, String error) {
+    super(time, latency, alertLevel, error);
+    this.skew = Long.MIN_VALUE;
+  }
 
-	public TimeResult(long time, long latency, AlertLevel alertLevel, long skew) {
-		super(time, latency, alertLevel, null);
-		this.skew = skew;
-	}
+  public TimeResult(long time, long latency, AlertLevel alertLevel, long skew) {
+    super(time, latency, alertLevel, null);
+    this.skew = skew;
+  }
 
-	public long getSkew() {
-		return skew;
-	}
+  public long getSkew() {
+    return skew;
+  }
 
-	@Override
-	public int getRowDataSize() {
-		return 1;
-	}
+  @Override
+  public int getRowDataSize() {
+    return 1;
+  }
 
-	@Override
-	public MilliInterval getRowData(int index) {
-		switch(index) {
-			case 0: return new MilliInterval(skew);
-			default: throw new IndexOutOfBoundsException();
-		}
-	}
+  @Override
+  public MilliInterval getRowData(int index) {
+    switch (index) {
+      case 0: return new MilliInterval(skew);
+      default: throw new IndexOutOfBoundsException();
+    }
+  }
 }

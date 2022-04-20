@@ -34,20 +34,20 @@ import java.io.Serializable;
  */
 public final class ApproximateDisplayExactBitRate implements Serializable {
 
-	private static final long serialVersionUID = 1;
+  private static final long serialVersionUID = 1;
 
-	private final long bit_rate;
+  private final long bit_rate;
 
-	public ApproximateDisplayExactBitRate(long bit_rate) {
-		this.bit_rate = bit_rate;
-	}
+  public ApproximateDisplayExactBitRate(long bit_rate) {
+    this.bit_rate = bit_rate;
+  }
 
-	public long getBitRate() {
-		return bit_rate;
-	}
+  public long getBitRate() {
+    return bit_rate;
+  }
 
-	@Override
-	public String toString() {
-		return Strings.getApproximateBitRate(bit_rate);
-	}
+  @Override
+  public String toString() {
+    return Strings.getApproximateBitRate(bit_rate);
+  }
 }

@@ -33,8 +33,8 @@ import java.rmi.RemoteException;
  */
 public interface TableResultListener extends Remote {
 
-	/**
-	 * Called when new results are available.
-	 */
-	void tableResultUpdated(TableResult tableResult) throws RemoteException;
+  /**
+   * Called when new results are available.
+   */
+  void tableResultUpdated(TableResult tableResult) throws RemoteException;
 }

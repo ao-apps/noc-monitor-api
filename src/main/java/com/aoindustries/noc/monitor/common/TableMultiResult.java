@@ -39,43 +39,43 @@ import java.io.Serializable;
  */
 public abstract class TableMultiResult extends Result implements Serializable {
 
-	private static final long serialVersionUID = 2L;
+  private static final long serialVersionUID = 2L;
 
-	private final AlertLevel alertLevel;
-	private final String error;
+  private final AlertLevel alertLevel;
+  private final String error;
 
-	/**
-	 * Either error is null or rowData is null, it cannot be that both are null or both are not null.
-	 */
-	protected TableMultiResult(long time, long latency, AlertLevel alertLevel, String error) {
-		super(time, latency);
+  /**
+   * Either error is null or rowData is null, it cannot be that both are null or both are not null.
+   */
+  protected TableMultiResult(long time, long latency, AlertLevel alertLevel, String error) {
+    super(time, latency);
 
-		this.alertLevel = alertLevel;
-		this.error = error;
-	}
+    this.alertLevel = alertLevel;
+    this.error = error;
+  }
 
-	/**
-	 * If is an error, gets the error message or <code>null</code> for no error.
-	 */
-	public String getError() {
-		return error;
-	}
+  /**
+   * If is an error, gets the error message or <code>null</code> for no error.
+   */
+  public String getError() {
+    return error;
+  }
 
-	/**
-	 * Gets the number of data elements for this result.
-	 */
-	public abstract int getRowDataSize();
+  /**
+   * Gets the number of data elements for this result.
+   */
+  public abstract int getRowDataSize();
 
-	/**
-	 * Gets the data for one row.  This should not include the time and latency, they are implied.
-	 * When there is an error, getRowData will not be checked and should return null.
-	 */
-	public abstract Object getRowData(int index);
+  /**
+   * Gets the data for one row.  This should not include the time and latency, they are implied.
+   * When there is an error, getRowData will not be checked and should return null.
+   */
+  public abstract Object getRowData(int index);
 
-	/**
-	 * Gets the alert level for this row.
-	 */
-	public AlertLevel getAlertLevel() {
-		return alertLevel;
-	}
+  /**
+   * Gets the alert level for this row.
+   */
+  public AlertLevel getAlertLevel() {
+    return alertLevel;
+  }
 }

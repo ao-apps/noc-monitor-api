@@ -35,95 +35,101 @@ import java.util.Locale;
  */
 public final class TableResult extends Result implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-	private final boolean isError;
-	private final int columns;
-	private final int rows;
-	private final SerializableFunction<Locale, ? extends List<String>> columnHeaders;
-	private final SerializableFunction<Locale, ? extends List<?>> tableData;
-	private final List<AlertLevel> alertLevels;
+  private final boolean isError;
+  private final int columns;
+  private final int rows;
+  private final SerializableFunction<Locale, ? extends List<String>> columnHeaders;
+  private final SerializableFunction<Locale, ? extends List<?>> tableData;
+  private final List<AlertLevel> alertLevels;
 
-	/**
-	 * @param  alertLevels  Must be unmodifiable - no defensive copy is made
-	 */
-	public TableResult(
-		long time,
-		long latency,
-		boolean isError,
-		int columns,
-		int rows,
-		SerializableFunction<Locale, ? extends List<String>> columnHeaders,
-		SerializableFunction<Locale, ? extends List<?>> tableData,
-		List<AlertLevel> alertLevels
-	) {
-		super(time, latency);
+  /**
+   * @param  alertLevels  Must be unmodifiable - no defensive copy is made
+   */
+  public TableResult(
+    long time,
+    long latency,
+    boolean isError,
+    int columns,
+    int rows,
+    SerializableFunction<Locale, ? extends List<String>> columnHeaders,
+    SerializableFunction<Locale, ? extends List<?>> tableData,
+    List<AlertLevel> alertLevels
+  ) {
+    super(time, latency);
 
-		if(rows != alertLevels.size()) throw new AssertionError("rows != alertLevels.size()");
+    if (rows != alertLevels.size()) {
+      throw new AssertionError("rows != alertLevels.size()");
+    }
 
-		this.isError = isError;
-		this.columns = columns;
-		this.rows = rows;
-		this.columnHeaders = columnHeaders;
-		this.tableData = tableData;
-		this.alertLevels = alertLevels;
-	}
+    this.isError = isError;
+    this.columns = columns;
+    this.rows = rows;
+    this.columnHeaders = columnHeaders;
+    this.tableData = tableData;
+    this.alertLevels = alertLevels;
+  }
 
-	/**
-	 * If is an error, columns=1, rows=1, and tableData.get(0) has the error.
-	 */
-	public boolean isError() {
-		return isError;
-	}
+  /**
+   * If is an error, columns=1, rows=1, and tableData.get(0) has the error.
+   */
+  public boolean isError() {
+    return isError;
+  }
 
-	/**
-	 * Gets the number of columns in the table.
-	 */
-	public int getColumns() {
-		return columns;
-	}
+  /**
+   * Gets the number of columns in the table.
+   */
+  public int getColumns() {
+    return columns;
+  }
 
-	/**
-	 * Gets the number of rows in the table.
-	 */
-	public int getRows() {
-		return rows;
-	}
+  /**
+   * Gets the number of rows in the table.
+   */
+  public int getRows() {
+    return rows;
+  }
 
-	/**
-	 * Gets the column headers for the table.
-	 */
-	public List<String> getColumnHeaders(Locale locale) {
-		List<String> headers = columnHeaders.apply(locale);
-		if(columns != headers.size()) throw new AssertionError("columns != headers.size()");
-		return headers;
-	}
+  /**
+   * Gets the column headers for the table.
+   */
+  public List<String> getColumnHeaders(Locale locale) {
+    List<String> headers = columnHeaders.apply(locale);
+    if (columns != headers.size()) {
+      throw new AssertionError("columns != headers.size()");
+    }
+    return headers;
+  }
 
-	/**
-	 * Gets the table data, each element may be found with the expression:
-	 * <pre>
-	 * List&lt;?&gt; tableData = tableResult.getTableData();
-	 * int columns = tableResult.getColumns();
-	 * 
-	 * Object cellData = tableData.get(row*columns + column);
-	 * </pre>
-	 */
-	public List<?> getTableData(Locale locale) {
-		List<?> td = tableData.apply(locale);
-		if((rows*columns) != td.size()) throw new AssertionError("(rows*columns) != tc.size()");
-		return td;
-	}
+  /**
+   * Gets the table data, each element may be found with the expression:
+   * <pre>
+   * List&lt;?&gt; tableData = tableResult.getTableData();
+   * int columns = tableResult.getColumns();
+   *
+   * Object cellData = tableData.get(row*columns + column);
+   * </pre>
+   */
+  public List<?> getTableData(Locale locale) {
+    List<?> td = tableData.apply(locale);
+    if ((rows * columns) != td.size()) {
+      throw new AssertionError("(rows*columns) != tc.size()");
+    }
+    return td;
+  }
 
-	/**
-	 * Gets the alert level on a per-row basis.
-	 */
-	@SuppressWarnings("ReturnOfCollectionOrArrayField") // Returning unmodifiable
-	public List<AlertLevel> getAlertLevels() {
-		return alertLevels;
-	}
+  /**
+   * Gets the alert level on a per-row basis.
+   */
+  @SuppressWarnings("ReturnOfCollectionOrArrayField") // Returning unmodifiable
+  public List<AlertLevel> getAlertLevels() {
+    return alertLevels;
+  }
 
-	@Override
-	public String toString() {
-		return time+", "+latency+"ns, isError="+isError+", "+columns+"x"+rows+", "+columnHeaders;
-	}
+  @Override
+  public String toString() {
+    return time+", "+latency+"ns, isError="+isError+", "+columns+"x"+rows+", "+columnHeaders;
+  }
 }

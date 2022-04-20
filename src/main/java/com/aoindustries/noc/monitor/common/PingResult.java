@@ -30,23 +30,23 @@ import java.io.Serializable;
  */
 public class PingResult extends TableMultiResult implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-	public PingResult(long time, long latency, AlertLevel alertLevel, String error) {
-		super(time, latency, alertLevel, error);
-	}
+  public PingResult(long time, long latency, AlertLevel alertLevel, String error) {
+    super(time, latency, alertLevel, error);
+  }
 
-	public PingResult(long time, long latency, AlertLevel alertLevel) {
-		super(time, latency, alertLevel, null);
-	}
+  public PingResult(long time, long latency, AlertLevel alertLevel) {
+    super(time, latency, alertLevel, null);
+  }
 
-	@Override
-	public int getRowDataSize() {
-		return 0;
-	}
+  @Override
+  public int getRowDataSize() {
+    return 0;
+  }
 
-	@Override
-	public Object getRowData(int index) {
-		throw new IndexOutOfBoundsException();
-	}
+  @Override
+  public Object getRowData(int index) {
+    throw new IndexOutOfBoundsException();
+  }
 }

@@ -32,27 +32,27 @@ import java.io.Serializable;
  */
 public abstract class Result implements Serializable {
 
-	private static final long serialVersionUID = 1;
+  private static final long serialVersionUID = 1;
 
-	protected final long time;
-	protected final long latency;
+  protected final long time;
+  protected final long latency;
 
-	protected Result(long time, long latency) {
-		this.time = time;
-		this.latency = latency;
-	}
+  protected Result(long time, long latency) {
+    this.time = time;
+    this.latency = latency;
+  }
 
-	/**
-	 * Gets the time this check was performed.
-	 */
-	public long getTime() {
-		return time;
-	}
+  /**
+   * Gets the time this check was performed.
+   */
+  public long getTime() {
+    return time;
+  }
 
-	/**
-	 * Gets the number of nanoseconds it took to perform the check.
-	 */
-	public long getLatency() {
-		return latency;
-	}
+  /**
+   * Gets the number of nanoseconds it took to perform the check.
+   */
+  public long getLatency() {
+    return latency;
+  }
 }

@@ -30,18 +30,18 @@ import java.rmi.RemoteException;
  */
 public interface RootNode extends Node {
 
-	/**
-	 * Adds a TreeListener, which will be notified when nodes are added, removed, or change alert status.
-	 */
-	void addTreeListener(TreeListener treeListener) throws RemoteException;
+  /**
+   * Adds a TreeListener, which will be notified when nodes are added, removed, or change alert status.
+   */
+  void addTreeListener(TreeListener treeListener) throws RemoteException;
 
-	/**
-	 * Removes a TreeListener.
-	 */
-	void removeTreeListener(TreeListener treeListener) throws RemoteException;
+  /**
+   * Removes a TreeListener.
+   */
+  void removeTreeListener(TreeListener treeListener) throws RemoteException;
 
-	/**
-	 * Gets a snapshot of the root node and all of its children.
-	 */
-	NodeSnapshot getSnapshot() throws RemoteException;
+  /**
+   * Gets a snapshot of the root node and all of its children.
+   */
+  NodeSnapshot getSnapshot() throws RemoteException;
 }

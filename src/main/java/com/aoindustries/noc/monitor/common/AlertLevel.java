@@ -31,20 +31,20 @@ package com.aoindustries.noc.monitor.common;
 // Matches enum com.aoindustries.aoserv.client.AlertLevel
 // Matches aoserv-master-db/aoindustries/monitoring/AlertLevel-type.sql
 public enum AlertLevel {
-	NONE,
-	LOW,
-	MEDIUM,
-	HIGH,
-	CRITICAL,
-	UNKNOWN;
+  NONE,
+  LOW,
+  MEDIUM,
+  HIGH,
+  CRITICAL,
+  UNKNOWN;
 
-	private static final AlertLevel[] alertLevels = values();
+  private static final AlertLevel[] alertLevels = values();
 
-	/**
-	 * Gets the alert level from ordinal without the overhead of a call
-	 * to <code>values</code>.
-	 */
-	public static AlertLevel fromOrdinal(int ordinal) {
-		return alertLevels[ordinal];
-	}
+  /**
+   * Gets the alert level from ordinal without the overhead of a call
+   * to <code>values</code>.
+   */
+  public static AlertLevel fromOrdinal(int ordinal) {
+    return alertLevels[ordinal];
+  }
 }

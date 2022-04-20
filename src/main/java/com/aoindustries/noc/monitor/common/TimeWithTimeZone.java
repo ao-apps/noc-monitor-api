@@ -36,32 +36,34 @@ import java.util.TimeZone;
  */
 public final class TimeWithTimeZone implements Serializable {
 
-	private static final long serialVersionUID = 1;
+  private static final long serialVersionUID = 1;
 
-	private final long time;
-	private final TimeZone timeZone;
+  private final long time;
+  private final TimeZone timeZone;
 
-	public TimeWithTimeZone(long time, TimeZone timeZone) {
-		this.time = time;
-		this.timeZone = timeZone;
-	}
+  public TimeWithTimeZone(long time, TimeZone timeZone) {
+    this.time = time;
+    this.timeZone = timeZone;
+  }
 
-	public TimeWithTimeZone(long time) {
-		this(time, null);
-	}
+  public TimeWithTimeZone(long time) {
+    this(time, null);
+  }
 
-	public long getTime() {
-		return time;
-	}
+  public long getTime() {
+    return time;
+  }
 
-	public TimeZone getTimeZone() {
-		return timeZone;
-	}
+  public TimeZone getTimeZone() {
+    return timeZone;
+  }
 
-	@Override
-	public String toString() {
-		DateFormat df = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.LONG, ThreadLocale.get());
-		if(timeZone!=null) df.setTimeZone(timeZone);
-		return df.format(new Date(time));
-	}
+  @Override
+  public String toString() {
+    DateFormat df = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.LONG, ThreadLocale.get());
+    if (timeZone != null) {
+      df.setTimeZone(timeZone);
+    }
+    return df.format(new Date(time));
+  }
 }

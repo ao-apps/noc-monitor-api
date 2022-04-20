@@ -33,8 +33,8 @@ import java.rmi.RemoteException;
  */
 public interface SingleResultListener extends Remote {
 
-	/**
-	 * Called when new results are available.
-	 */
-	void singleResultUpdated(SingleResult singleResult) throws RemoteException;
+  /**
+   * Called when new results are available.
+   */
+  void singleResultUpdated(SingleResult singleResult) throws RemoteException;
 }

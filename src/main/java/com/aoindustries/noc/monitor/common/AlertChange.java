@@ -32,80 +32,80 @@ import java.io.Serializable;
  */
 public final class AlertChange implements Serializable {
 
-	private static final long serialVersionUID = 2;
+  private static final long serialVersionUID = 2;
 
-	private final Node node;
-	private final String nodeFullPath;
-	private final AlertLevel oldAlertLevel;
-	private final AlertLevel newAlertLevel;
-	private final String alertMessage;
-	private final AlertCategory oldAlertCategory;
-	private final AlertCategory newAlertCategory;
+  private final Node node;
+  private final String nodeFullPath;
+  private final AlertLevel oldAlertLevel;
+  private final AlertLevel newAlertLevel;
+  private final String alertMessage;
+  private final AlertCategory oldAlertCategory;
+  private final AlertCategory newAlertCategory;
 
-	public AlertChange(
-		Node node,
-		String nodeFullPath,
-		AlertLevel oldAlertLevel,
-		AlertLevel newAlertLevel,
-		String alertMessage,
-		AlertCategory oldAlertCategory,
-		AlertCategory newAlertCategory
-	) {
-		this.node = node;
-		this.nodeFullPath = nodeFullPath;
-		this.oldAlertLevel = oldAlertLevel;
-		this.newAlertLevel = newAlertLevel;
-		this.alertMessage = alertMessage;
-		this.oldAlertCategory = oldAlertCategory;
-		this.newAlertCategory = newAlertCategory;
-	}
+  public AlertChange(
+    Node node,
+    String nodeFullPath,
+    AlertLevel oldAlertLevel,
+    AlertLevel newAlertLevel,
+    String alertMessage,
+    AlertCategory oldAlertCategory,
+    AlertCategory newAlertCategory
+  ) {
+    this.node = node;
+    this.nodeFullPath = nodeFullPath;
+    this.oldAlertLevel = oldAlertLevel;
+    this.newAlertLevel = newAlertLevel;
+    this.alertMessage = alertMessage;
+    this.oldAlertCategory = oldAlertCategory;
+    this.newAlertCategory = newAlertCategory;
+  }
 
-	/**
-	 * Gets the node that changed status.
-	 */
-	public Node getNode() {
-		return node;
-	}
+  /**
+   * Gets the node that changed status.
+   */
+  public Node getNode() {
+    return node;
+  }
 
-	/**
-	 * Gets the full path for simplified displays.
-	 */
-	public String getNodeFullPath() {
-		return nodeFullPath;
-	}
+  /**
+   * Gets the full path for simplified displays.
+   */
+  public String getNodeFullPath() {
+    return nodeFullPath;
+  }
 
-	/**
-	 * Gets the old alert level.
-	 */
-	public AlertLevel getOldAlertLevel() {
-		return oldAlertLevel;
-	}
+  /**
+   * Gets the old alert level.
+   */
+  public AlertLevel getOldAlertLevel() {
+    return oldAlertLevel;
+  }
 
-	/**
-	 * Gets the new alert level.
-	 */
-	public AlertLevel getNewAlertLevel() {
-		return newAlertLevel;
-	}
+  /**
+   * Gets the new alert level.
+   */
+  public AlertLevel getNewAlertLevel() {
+    return newAlertLevel;
+  }
 
-	/**
-	 * Gets the associated alert message.
-	 */
-	public String getAlertMessage() {
-		return alertMessage;
-	}
+  /**
+   * Gets the associated alert message.
+   */
+  public String getAlertMessage() {
+    return alertMessage;
+  }
 
-	/**
-	 * Gets the old alert category.
-	 */
-	public AlertCategory getOldAlertCategory() {
-		return oldAlertCategory;
-	}
+  /**
+   * Gets the old alert category.
+   */
+  public AlertCategory getOldAlertCategory() {
+    return oldAlertCategory;
+  }
 
-	/**
-	 * Gets the new alert category.
-	 */
-	public AlertCategory getNewAlertCategory() {
-		return newAlertCategory;
-	}
+  /**
+   * Gets the new alert category.
+   */
+  public AlertCategory getNewAlertCategory() {
+    return newAlertCategory;
+  }
 }

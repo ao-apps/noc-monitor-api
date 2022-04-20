@@ -34,18 +34,18 @@ import java.util.List;
  */
 public interface TreeListener extends Remote {
 
-	/**
-	 * Called sometime after one or more nodes are added.
-	 */
-	void nodeAdded() throws RemoteException;
+  /**
+   * Called sometime after one or more nodes are added.
+   */
+  void nodeAdded() throws RemoteException;
 
-	/**
-	 * Called sometime after one or more nodes are removed.
-	 */
-	void nodeRemoved() throws RemoteException;
+  /**
+   * Called sometime after one or more nodes are removed.
+   */
+  void nodeRemoved() throws RemoteException;
 
-	/**
-	 * Called after one or more nodes change alert levels.
-	 */
-	void nodeAlertChanged(List<AlertChange> changes) throws RemoteException;
+  /**
+   * Called after one or more nodes change alert levels.
+   */
+  void nodeAlertChanged(List<AlertChange> changes) throws RemoteException;
 }

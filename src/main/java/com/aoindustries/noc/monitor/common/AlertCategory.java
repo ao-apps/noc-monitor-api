@@ -39,36 +39,36 @@ import com.aoindustries.aoserv.client.ticket.TicketType;
  */
 public enum AlertCategory {
 
-	/**
-	 * Something that is otherwise uncategorized.
-	 */
-	UNCATEGORIZED,
+  /**
+   * Something that is otherwise uncategorized.
+   */
+  UNCATEGORIZED,
 
-	/**
-	 * Alerts to incoming email messages not otherwise moved into the ticket system.
-	 */
-	EMAIL,
+  /**
+   * Alerts to incoming email messages not otherwise moved into the ticket system.
+   */
+  EMAIL,
 
-	/**
-	 * @see  TicketType#CONTACT
-	 */
-	CONTACT,
+  /**
+   * @see  TicketType#CONTACT
+   */
+  CONTACT,
 
-	/**
-	 * @see  TicketType#SUPPORT
-	 */
-	SUPPORT,
+  /**
+   * @see  TicketType#SUPPORT
+   */
+  SUPPORT,
 
-	/**
-	 * @see  Request
-	 */
-	SIGNUP,
+  /**
+   * @see  Request
+   */
+  SIGNUP,
 
-	/**
-	 * Alerts coming from the monitoring system.
-	 * <p>
-	 * TODO: Should this be split to infrastructure, virtual, and other?
-	 * </p>
-	 */
-	MONITORING
+  /**
+   * Alerts coming from the monitoring system.
+   * <p>
+   * TODO: Should this be split to infrastructure, virtual, and other?
+   * </p>
+   */
+  MONITORING
 }
