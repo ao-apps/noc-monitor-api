@@ -44,10 +44,10 @@ public class LoadAverageResult extends TableMultiResult implements Serializable 
   private final float loadCritical;
 
   public LoadAverageResult(
-    long time,
-    long latency,
-    AlertLevel alertLevel,
-    String error
+      long time,
+      long latency,
+      AlertLevel alertLevel,
+      String error
   ) {
     super(time, latency, alertLevel, error);
     this.oneMinute = Float.NaN;
@@ -63,19 +63,19 @@ public class LoadAverageResult extends TableMultiResult implements Serializable 
   }
 
   public LoadAverageResult(
-    long time,
-    long latency,
-    AlertLevel alertLevel,
-    float oneMinute,
-    float fiveMinute,
-    float tenMinute,
-    int runningProcesses,
-    int totalProcesses,
-    int lastPID,
-    float loadLow,
-    float loadMedium,
-    float loadHigh,
-    float loadCritical
+      long time,
+      long latency,
+      AlertLevel alertLevel,
+      float oneMinute,
+      float fiveMinute,
+      float tenMinute,
+      int runningProcesses,
+      int totalProcesses,
+      int lastPID,
+      float loadLow,
+      float loadMedium,
+      float loadHigh,
+      float loadCritical
   ) {
     super(time, latency, alertLevel, null);
     this.oneMinute = oneMinute;
@@ -106,13 +106,13 @@ public class LoadAverageResult extends TableMultiResult implements Serializable 
       case 5: return lastPID;
       case 6: {
         return
-          (Float.isNaN(loadLow) ? "-" : Float.toString(loadLow))
-          + " / "
-          + (Float.isNaN(loadMedium) ? "-" : Float.toString(loadMedium))
-          + " / "
-          + (Float.isNaN(loadHigh) ? "-" : Float.toString(loadHigh))
-          + " / "
-          + (Float.isNaN(loadCritical) ? "-" : Float.toString(loadCritical))
+            (Float.isNaN(loadLow) ? "-" : Float.toString(loadLow))
+                + " / "
+                + (Float.isNaN(loadMedium) ? "-" : Float.toString(loadMedium))
+                + " / "
+                + (Float.isNaN(loadHigh) ? "-" : Float.toString(loadHigh))
+                + " / "
+                + (Float.isNaN(loadCritical) ? "-" : Float.toString(loadCritical))
         ;
       }
       default: throw new IndexOutOfBoundsException();

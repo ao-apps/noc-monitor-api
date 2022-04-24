@@ -43,13 +43,13 @@ public final class AlertChange implements Serializable {
   private final AlertCategory newAlertCategory;
 
   public AlertChange(
-    Node node,
-    String nodeFullPath,
-    AlertLevel oldAlertLevel,
-    AlertLevel newAlertLevel,
-    String alertMessage,
-    AlertCategory oldAlertCategory,
-    AlertCategory newAlertCategory
+      Node node,
+      String nodeFullPath,
+      AlertLevel oldAlertLevel,
+      AlertLevel newAlertLevel,
+      String alertMessage,
+      AlertCategory oldAlertCategory,
+      AlertCategory newAlertCategory
   ) {
     this.node = node;
     this.nodeFullPath = nodeFullPath;

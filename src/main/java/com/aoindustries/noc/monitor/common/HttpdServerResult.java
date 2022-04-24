@@ -40,10 +40,10 @@ public class HttpdServerResult extends TableMultiResult implements Serializable 
   private final int concurrencyCritical;
 
   public HttpdServerResult(
-    long time,
-    long latency,
-    AlertLevel alertLevel,
-    String error
+      long time,
+      long latency,
+      AlertLevel alertLevel,
+      String error
   ) {
     super(time, latency, alertLevel, error);
     this.concurrency = -1;
@@ -55,15 +55,15 @@ public class HttpdServerResult extends TableMultiResult implements Serializable 
   }
 
   public HttpdServerResult(
-    long time,
-    long latency,
-    AlertLevel alertLevel,
-    int concurrency,
-    int maxConcurrency,
-    int concurrencyLow,
-    int concurrencyMedium,
-    int concurrencyHigh,
-    int concurrencyCritical
+      long time,
+      long latency,
+      AlertLevel alertLevel,
+      int concurrency,
+      int maxConcurrency,
+      int concurrencyLow,
+      int concurrencyMedium,
+      int concurrencyHigh,
+      int concurrencyCritical
   ) {
     super(time, latency, alertLevel, null);
     this.concurrency = concurrency;
@@ -86,13 +86,13 @@ public class HttpdServerResult extends TableMultiResult implements Serializable 
       case 1: return maxConcurrency;
       case 2: {
         return
-          ((concurrencyLow == -1) ? "-" : Integer.toString(concurrencyLow))
-          + " / "
-          + ((concurrencyMedium == -1) ? "-" : Integer.toString(concurrencyMedium))
-          + " / "
-          + ((concurrencyHigh == -1) ? "-" : Integer.toString(concurrencyHigh))
-          + " / "
-          + ((concurrencyCritical == -1) ? "-" : Integer.toString(concurrencyCritical))
+            ((concurrencyLow == -1) ? "-" : Integer.toString(concurrencyLow))
+                + " / "
+                + ((concurrencyMedium == -1) ? "-" : Integer.toString(concurrencyMedium))
+                + " / "
+                + ((concurrencyHigh == -1) ? "-" : Integer.toString(concurrencyHigh))
+                + " / "
+                + ((concurrencyCritical == -1) ? "-" : Integer.toString(concurrencyCritical))
         ;
       }
       default: throw new IndexOutOfBoundsException();

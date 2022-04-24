@@ -61,10 +61,10 @@ public class UpsResult extends TableMultiResult implements Serializable {
   private final float itemp;
 
   public UpsResult(
-    long time,
-    long latency,
-    AlertLevel alertLevel,
-    String error
+      long time,
+      long latency,
+      AlertLevel alertLevel,
+      String error
   ) {
     super(time, latency, alertLevel, error);
     this.upsname = null;
@@ -88,27 +88,27 @@ public class UpsResult extends TableMultiResult implements Serializable {
   }
 
   public UpsResult(
-    long time,
-    long latency,
-    AlertLevel alertLevel,
-    String upsname,
-    String status,
-    float linev,
-    float lotrans,
-    float hitrans,
-    float linefreq,
-    float outputv,
-    float nomoutv,
-    float loadpct,
-    float bcharge,
-    float battv,
-    float nombattv,
-    int extbatts,
-    int badbatts,
-    MilliInterval tonbatt,
-    MilliInterval cumonbatt,
-    MilliInterval timeleft,
-    float itemp
+      long time,
+      long latency,
+      AlertLevel alertLevel,
+      String upsname,
+      String status,
+      float linev,
+      float lotrans,
+      float hitrans,
+      float linefreq,
+      float outputv,
+      float nomoutv,
+      float loadpct,
+      float bcharge,
+      float battv,
+      float nombattv,
+      int extbatts,
+      int badbatts,
+      MilliInterval tonbatt,
+      MilliInterval cumonbatt,
+      MilliInterval timeleft,
+      float itemp
   ) {
     super(time, latency, alertLevel, null);
     this.upsname = upsname;

@@ -45,10 +45,10 @@ public class MySQLReplicationResult extends TableMultiResult implements Serializ
   private final String alertThresholds;
 
   public MySQLReplicationResult(
-    long time,
-    long latency,
-    AlertLevel alertLevel,
-    String error
+      long time,
+      long latency,
+      AlertLevel alertLevel,
+      String error
   ) {
     super(time, latency, alertLevel, error);
     this.secondsBehindMaster = null;
@@ -65,20 +65,20 @@ public class MySQLReplicationResult extends TableMultiResult implements Serializ
   }
 
   public MySQLReplicationResult(
-    long time,
-    long latency,
-    AlertLevel alertLevel,
-    String secondsBehindMaster,
-    String file,
-    String position,
-    String slaveIOState,
-    String masterLogFile,
-    String readMasterLogPos,
-    String slaveIORunning,
-    String slaveSQLRunning,
-    String lastErrno,
-    String lastError,
-    String alertThresholds
+      long time,
+      long latency,
+      AlertLevel alertLevel,
+      String secondsBehindMaster,
+      String file,
+      String position,
+      String slaveIOState,
+      String masterLogFile,
+      String readMasterLogPos,
+      String slaveIORunning,
+      String slaveSQLRunning,
+      String lastErrno,
+      String lastError,
+      String alertThresholds
   ) {
     super(time, latency, alertLevel, null);
     this.secondsBehindMaster = secondsBehindMaster;

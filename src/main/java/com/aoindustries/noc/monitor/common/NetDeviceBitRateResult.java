@@ -43,10 +43,10 @@ public class NetDeviceBitRateResult extends TableMultiResult implements Serializ
   private final long bpsCritical;
 
   public NetDeviceBitRateResult(
-    long time,
-    long latency,
-    AlertLevel alertLevel,
-    String error
+      long time,
+      long latency,
+      AlertLevel alertLevel,
+      String error
   ) {
     super(time, latency, alertLevel, error);
     this.txBitsPerSecond = -1;
@@ -60,17 +60,17 @@ public class NetDeviceBitRateResult extends TableMultiResult implements Serializ
   }
 
   public NetDeviceBitRateResult(
-    long time,
-    long latency,
-    AlertLevel alertLevel,
-    long txBitsPerSecond,
-    long rxBitsPerSecond,
-    long txPacketsPerSecond,
-    long rxPacketsPerSecond,
-    long bpsLow,
-    long bpsMedium,
-    long bpsHigh,
-    long bpsCritical
+      long time,
+      long latency,
+      AlertLevel alertLevel,
+      long txBitsPerSecond,
+      long rxBitsPerSecond,
+      long txPacketsPerSecond,
+      long rxPacketsPerSecond,
+      long bpsLow,
+      long bpsMedium,
+      long bpsHigh,
+      long bpsCritical
   ) {
     super(time, latency, alertLevel, null);
     this.txBitsPerSecond = txBitsPerSecond;
@@ -97,13 +97,13 @@ public class NetDeviceBitRateResult extends TableMultiResult implements Serializ
       case 3: return rxPacketsPerSecond == -1 ? null : new ApproximateDisplayExactBitRate(rxPacketsPerSecond);
       case 4: {
         return
-          (bpsLow == -1 ? "-" : Strings.getApproximateBitRate(bpsLow))
-          + " / "
-          + (bpsMedium == -1 ? "-" : Strings.getApproximateBitRate(bpsMedium))
-          + " / "
-          + (bpsHigh == -1 ? "-" : Strings.getApproximateBitRate(bpsHigh))
-          + " / "
-          + (bpsCritical == -1 ? "-" : Strings.getApproximateBitRate(bpsCritical))
+            (bpsLow == -1 ? "-" : Strings.getApproximateBitRate(bpsLow))
+                + " / "
+                + (bpsMedium == -1 ? "-" : Strings.getApproximateBitRate(bpsMedium))
+                + " / "
+                + (bpsHigh == -1 ? "-" : Strings.getApproximateBitRate(bpsHigh))
+                + " / "
+                + (bpsCritical == -1 ? "-" : Strings.getApproximateBitRate(bpsCritical))
         ;
       }
       default: throw new IndexOutOfBoundsException();

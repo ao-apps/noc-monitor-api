@@ -40,10 +40,10 @@ public class MemoryResult extends TableMultiResult implements Serializable {
   private final long swapFree;
 
   public MemoryResult(
-    long time,
-    long latency,
-    AlertLevel alertLevel,
-    String error
+      long time,
+      long latency,
+      AlertLevel alertLevel,
+      String error
   ) {
     super(time, latency, alertLevel, error);
     memTotal = Long.MIN_VALUE;
@@ -55,15 +55,15 @@ public class MemoryResult extends TableMultiResult implements Serializable {
   }
 
   public MemoryResult(
-    long time,
-    long latency,
-    AlertLevel alertLevel,
-    long memTotal,
-    long memFree,
-    long buffers,
-    long cached,
-    long swapTotal,
-    long swapFree
+      long time,
+      long latency,
+      AlertLevel alertLevel,
+      long memTotal,
+      long memFree,
+      long buffers,
+      long cached,
+      long swapTotal,
+      long swapFree
   ) {
     super(time, latency, alertLevel, null);
     this.memTotal = memTotal;

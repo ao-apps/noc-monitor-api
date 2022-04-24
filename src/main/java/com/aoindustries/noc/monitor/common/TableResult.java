@@ -48,14 +48,14 @@ public final class TableResult extends Result implements Serializable {
    * @param  alertLevels  Must be unmodifiable - no defensive copy is made
    */
   public TableResult(
-    long time,
-    long latency,
-    boolean isError,
-    int columns,
-    int rows,
-    SerializableFunction<Locale, ? extends List<String>> columnHeaders,
-    SerializableFunction<Locale, ? extends List<?>> tableData,
-    List<AlertLevel> alertLevels
+      long time,
+      long latency,
+      boolean isError,
+      int columns,
+      int rows,
+      SerializableFunction<Locale, ? extends List<String>> columnHeaders,
+      SerializableFunction<Locale, ? extends List<?>> tableData,
+      List<AlertLevel> alertLevels
   ) {
     super(time, latency);
 
@@ -130,6 +130,6 @@ public final class TableResult extends Result implements Serializable {
 
   @Override
   public String toString() {
-    return time+", "+latency+"ns, isError="+isError+", "+columns+"x"+rows+", "+columnHeaders;
+    return time + ", " + latency + "ns, isError=" + isError + ", " + columns + "x" + rows + ", " + columnHeaders;
   }
 }
