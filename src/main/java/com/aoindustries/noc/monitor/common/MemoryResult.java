@@ -82,13 +82,20 @@ public class MemoryResult extends TableMultiResult implements Serializable {
   @Override
   public ApproximateDisplayExactSize getRowData(int index) {
     switch (index) {
-      case 0: return new ApproximateDisplayExactSize(memTotal);
-      case 1: return new ApproximateDisplayExactSize(memFree);
-      case 2: return new ApproximateDisplayExactSize(buffers);
-      case 3: return new ApproximateDisplayExactSize(cached);
-      case 4: return new ApproximateDisplayExactSize(swapTotal);
-      case 5: return new ApproximateDisplayExactSize(swapFree);
-      default: throw new IndexOutOfBoundsException();
+      case 0:
+        return new ApproximateDisplayExactSize(memTotal);
+      case 1:
+        return new ApproximateDisplayExactSize(memFree);
+      case 2:
+        return new ApproximateDisplayExactSize(buffers);
+      case 3:
+        return new ApproximateDisplayExactSize(cached);
+      case 4:
+        return new ApproximateDisplayExactSize(swapTotal);
+      case 5:
+        return new ApproximateDisplayExactSize(swapFree);
+      default:
+        throw new IndexOutOfBoundsException();
     }
   }
 

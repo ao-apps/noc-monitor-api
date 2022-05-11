@@ -37,7 +37,7 @@ public class LoadAverageResult extends TableMultiResult implements Serializable 
   private final float tenMinute;
   private final int runningProcesses;
   private final int totalProcesses;
-  private final int lastPID;
+  private final int lastPid;
   private final float loadLow;
   private final float loadMedium;
   private final float loadHigh;
@@ -55,7 +55,7 @@ public class LoadAverageResult extends TableMultiResult implements Serializable 
     this.tenMinute = Float.NaN;
     this.runningProcesses = Integer.MIN_VALUE;
     this.totalProcesses = Integer.MIN_VALUE;
-    this.lastPID = Integer.MIN_VALUE;
+    this.lastPid = Integer.MIN_VALUE;
     this.loadLow = Float.NaN;
     this.loadMedium = Float.NaN;
     this.loadHigh = Float.NaN;
@@ -71,7 +71,7 @@ public class LoadAverageResult extends TableMultiResult implements Serializable 
       float tenMinute,
       int runningProcesses,
       int totalProcesses,
-      int lastPID,
+      int lastPid,
       float loadLow,
       float loadMedium,
       float loadHigh,
@@ -83,7 +83,7 @@ public class LoadAverageResult extends TableMultiResult implements Serializable 
     this.tenMinute = tenMinute;
     this.runningProcesses = runningProcesses;
     this.totalProcesses = totalProcesses;
-    this.lastPID = lastPID;
+    this.lastPid = lastPid;
     this.loadLow = loadLow;
     this.loadMedium = loadMedium;
     this.loadHigh = loadHigh;
@@ -98,12 +98,18 @@ public class LoadAverageResult extends TableMultiResult implements Serializable 
   @Override
   public Object getRowData(int index) {
     switch (index) {
-      case 0: return oneMinute;
-      case 1: return fiveMinute;
-      case 2: return tenMinute;
-      case 3: return runningProcesses;
-      case 4: return totalProcesses;
-      case 5: return lastPID;
+      case 0:
+        return oneMinute;
+      case 1:
+        return fiveMinute;
+      case 2:
+        return tenMinute;
+      case 3:
+        return runningProcesses;
+      case 4:
+        return totalProcesses;
+      case 5:
+        return lastPid;
       case 6: {
         return
             (Float.isNaN(loadLow) ? "-" : Float.toString(loadLow))
@@ -112,10 +118,10 @@ public class LoadAverageResult extends TableMultiResult implements Serializable 
                 + " / "
                 + (Float.isNaN(loadHigh) ? "-" : Float.toString(loadHigh))
                 + " / "
-                + (Float.isNaN(loadCritical) ? "-" : Float.toString(loadCritical))
-        ;
+                + (Float.isNaN(loadCritical) ? "-" : Float.toString(loadCritical));
       }
-      default: throw new IndexOutOfBoundsException();
+      default:
+        throw new IndexOutOfBoundsException();
     }
   }
 
@@ -139,8 +145,8 @@ public class LoadAverageResult extends TableMultiResult implements Serializable 
     return totalProcesses;
   }
 
-  public int getLastPID() {
-    return lastPID;
+  public int getLastPid() {
+    return lastPid;
   }
 
   public float getLoadLow() {

@@ -139,8 +139,10 @@ public class UpsResult extends TableMultiResult implements Serializable {
   @Override
   public Object getRowData(int index) {
     switch (index) {
-      case 0: return upsname;
-      case 1: return status;
+      case 0:
+        return upsname;
+      case 1:
+        return status;
       case 2:
         if (Float.isNaN(linev)) {
           return null;
@@ -187,8 +189,9 @@ public class UpsResult extends TableMultiResult implements Serializable {
         if (Float.isNaN(itemp)) {
           return null;
         }
-        return String.format("%.1f \u00B0C", itemp);
-      default: throw new IndexOutOfBoundsException();
+        return String.format("%.1f °C", itemp);
+      default:
+        throw new IndexOutOfBoundsException();
     }
   }
 

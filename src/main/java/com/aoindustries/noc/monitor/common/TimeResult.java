@@ -57,8 +57,10 @@ public class TimeResult extends TableMultiResult implements Serializable {
   @Override
   public MilliInterval getRowData(int index) {
     switch (index) {
-      case 0: return new MilliInterval(skew);
-      default: throw new IndexOutOfBoundsException();
+      case 0:
+        return new MilliInterval(skew);
+      default:
+        throw new IndexOutOfBoundsException();
     }
   }
 }

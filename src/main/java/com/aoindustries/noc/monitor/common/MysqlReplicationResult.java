@@ -28,23 +28,23 @@ import java.io.Serializable;
 /**
  * @author  AO Industries, Inc.
  */
-public class MySQLReplicationResult extends TableMultiResult implements Serializable {
+public class MysqlReplicationResult extends TableMultiResult implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
   private final String secondsBehindMaster;
   private final String file;
   private final String position;
-  private final String slaveIOState;
+  private final String slaveIoState;
   private final String masterLogFile;
   private final String readMasterLogPos;
-  private final String slaveIORunning;
-  private final String slaveSQLRunning;
+  private final String slaveIoRunning;
+  private final String slaveSqlRunning;
   private final String lastErrno;
   private final String lastError;
   private final String alertThresholds;
 
-  public MySQLReplicationResult(
+  public MysqlReplicationResult(
       long time,
       long latency,
       AlertLevel alertLevel,
@@ -54,28 +54,28 @@ public class MySQLReplicationResult extends TableMultiResult implements Serializ
     this.secondsBehindMaster = null;
     this.file = null;
     this.position = null;
-    this.slaveIOState = null;
+    this.slaveIoState = null;
     this.masterLogFile = null;
     this.readMasterLogPos = null;
-    this.slaveIORunning = null;
-    this.slaveSQLRunning = null;
+    this.slaveIoRunning = null;
+    this.slaveSqlRunning = null;
     this.lastErrno = null;
     this.lastError = null;
     this.alertThresholds = null;
   }
 
-  public MySQLReplicationResult(
+  public MysqlReplicationResult(
       long time,
       long latency,
       AlertLevel alertLevel,
       String secondsBehindMaster,
       String file,
       String position,
-      String slaveIOState,
+      String slaveIoState,
       String masterLogFile,
       String readMasterLogPos,
-      String slaveIORunning,
-      String slaveSQLRunning,
+      String slaveIoRunning,
+      String slaveSqlRunning,
       String lastErrno,
       String lastError,
       String alertThresholds
@@ -84,11 +84,11 @@ public class MySQLReplicationResult extends TableMultiResult implements Serializ
     this.secondsBehindMaster = secondsBehindMaster;
     this.file = file;
     this.position = position;
-    this.slaveIOState = slaveIOState;
+    this.slaveIoState = slaveIoState;
     this.masterLogFile = masterLogFile;
     this.readMasterLogPos = readMasterLogPos;
-    this.slaveIORunning = slaveIORunning;
-    this.slaveSQLRunning = slaveSQLRunning;
+    this.slaveIoRunning = slaveIoRunning;
+    this.slaveSqlRunning = slaveSqlRunning;
     this.lastErrno = lastErrno;
     this.lastError = lastError;
     this.alertThresholds = alertThresholds;
@@ -102,18 +102,30 @@ public class MySQLReplicationResult extends TableMultiResult implements Serializ
   @Override
   public String getRowData(int index) {
     switch (index) {
-      case 0: return secondsBehindMaster;
-      case 1: return file;
-      case 2: return position;
-      case 3: return slaveIOState;
-      case 4: return masterLogFile;
-      case 5: return readMasterLogPos;
-      case 6: return slaveIORunning;
-      case 7: return slaveSQLRunning;
-      case 8: return lastErrno;
-      case 9: return lastError;
-      case 10: return alertThresholds;
-      default: throw new IndexOutOfBoundsException();
+      case 0:
+        return secondsBehindMaster;
+      case 1:
+        return file;
+      case 2:
+        return position;
+      case 3:
+        return slaveIoState;
+      case 4:
+        return masterLogFile;
+      case 5:
+        return readMasterLogPos;
+      case 6:
+        return slaveIoRunning;
+      case 7:
+        return slaveSqlRunning;
+      case 8:
+        return lastErrno;
+      case 9:
+        return lastError;
+      case 10:
+        return alertThresholds;
+      default:
+        throw new IndexOutOfBoundsException();
     }
   }
 
@@ -129,8 +141,8 @@ public class MySQLReplicationResult extends TableMultiResult implements Serializ
     return position;
   }
 
-  public String getSlaveIOState() {
-    return slaveIOState;
+  public String getSlaveIoState() {
+    return slaveIoState;
   }
 
   public String getMasterLogFile() {
@@ -141,12 +153,12 @@ public class MySQLReplicationResult extends TableMultiResult implements Serializ
     return readMasterLogPos;
   }
 
-  public String getSlaveIORunning() {
-    return slaveIORunning;
+  public String getSlaveIoRunning() {
+    return slaveIoRunning;
   }
 
-  public String getSlaveSQLRunning() {
-    return slaveSQLRunning;
+  public String getSlaveSqlRunning() {
+    return slaveSqlRunning;
   }
 
   public String getLastErrno() {

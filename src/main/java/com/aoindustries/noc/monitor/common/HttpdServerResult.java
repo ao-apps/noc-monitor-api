@@ -82,8 +82,10 @@ public class HttpdServerResult extends TableMultiResult implements Serializable 
   @Override
   public Object getRowData(int index) {
     switch (index) {
-      case 0: return concurrency;
-      case 1: return maxConcurrency;
+      case 0:
+        return concurrency;
+      case 1:
+        return maxConcurrency;
       case 2: {
         return
             ((concurrencyLow == -1) ? "-" : Integer.toString(concurrencyLow))
@@ -92,10 +94,10 @@ public class HttpdServerResult extends TableMultiResult implements Serializable 
                 + " / "
                 + ((concurrencyHigh == -1) ? "-" : Integer.toString(concurrencyHigh))
                 + " / "
-                + ((concurrencyCritical == -1) ? "-" : Integer.toString(concurrencyCritical))
-        ;
+                + ((concurrencyCritical == -1) ? "-" : Integer.toString(concurrencyCritical));
       }
-      default: throw new IndexOutOfBoundsException();
+      default:
+        throw new IndexOutOfBoundsException();
     }
   }
 

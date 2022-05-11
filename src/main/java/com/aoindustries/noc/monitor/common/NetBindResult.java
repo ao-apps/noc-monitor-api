@@ -54,8 +54,10 @@ public class NetBindResult extends TableMultiResult implements Serializable {
   @Override
   public String getRowData(int index) {
     switch (index) {
-      case 0: return result;
-      default: throw new IndexOutOfBoundsException();
+      case 0:
+        return result;
+      default:
+        throw new IndexOutOfBoundsException();
     }
   }
 }

@@ -91,10 +91,14 @@ public class NetDeviceBitRateResult extends TableMultiResult implements Serializ
   @Override
   public Object getRowData(int index) {
     switch (index) {
-      case 0: return txBitsPerSecond == -1 ? null : new ApproximateDisplayExactBitRate(txBitsPerSecond);
-      case 1: return rxBitsPerSecond == -1 ? null : new ApproximateDisplayExactBitRate(rxBitsPerSecond);
-      case 2: return txPacketsPerSecond == -1 ? null : new ApproximateDisplayExactBitRate(txPacketsPerSecond);
-      case 3: return rxPacketsPerSecond == -1 ? null : new ApproximateDisplayExactBitRate(rxPacketsPerSecond);
+      case 0:
+        return txBitsPerSecond == -1 ? null : new ApproximateDisplayExactBitRate(txBitsPerSecond);
+      case 1:
+        return rxBitsPerSecond == -1 ? null : new ApproximateDisplayExactBitRate(rxBitsPerSecond);
+      case 2:
+        return txPacketsPerSecond == -1 ? null : new ApproximateDisplayExactBitRate(txPacketsPerSecond);
+      case 3:
+        return rxPacketsPerSecond == -1 ? null : new ApproximateDisplayExactBitRate(rxPacketsPerSecond);
       case 4: {
         return
             (bpsLow == -1 ? "-" : Strings.getApproximateBitRate(bpsLow))
@@ -103,10 +107,10 @@ public class NetDeviceBitRateResult extends TableMultiResult implements Serializ
                 + " / "
                 + (bpsHigh == -1 ? "-" : Strings.getApproximateBitRate(bpsHigh))
                 + " / "
-                + (bpsCritical == -1 ? "-" : Strings.getApproximateBitRate(bpsCritical))
-        ;
+                + (bpsCritical == -1 ? "-" : Strings.getApproximateBitRate(bpsCritical));
       }
-      default: throw new IndexOutOfBoundsException();
+      default:
+        throw new IndexOutOfBoundsException();
     }
   }
 
