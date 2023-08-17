@@ -30,7 +30,7 @@ along with noc-monitor-api.  If not, see <https://www.gnu.org/licenses/>.
   </parent>
 
   <groupId>com.aoindustries</groupId><artifactId>noc-monitor-api</artifactId><version>1.4.0-POST-SNAPSHOT</version>
-  <packaging>bundle</packaging>
+  <packaging>jar</packaging>
 
   <properties>
     <module.name>com.aoindustries.noc.monitor.api</module.name>
