@@ -1,6 +1,6 @@
 /*
  * noc-monitor-api - API of Network Operations Center Monitoring.
- * Copyright (C) 2009-2012, 2016, 2020, 2022  AO Industries, Inc.
+ * Copyright (C) 2009-2012, 2016, 2020, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -110,7 +110,7 @@ public class LoadAverageResult extends TableMultiResult implements Serializable 
         return totalProcesses;
       case 5:
         return lastPid;
-      case 6: {
+      case 6:
         return
             (Float.isNaN(loadLow) ? "-" : Float.toString(loadLow))
                 + " / "
@@ -119,7 +119,6 @@ public class LoadAverageResult extends TableMultiResult implements Serializable 
                 + (Float.isNaN(loadHigh) ? "-" : Float.toString(loadHigh))
                 + " / "
                 + (Float.isNaN(loadCritical) ? "-" : Float.toString(loadCritical));
-      }
       default:
         throw new IndexOutOfBoundsException();
     }

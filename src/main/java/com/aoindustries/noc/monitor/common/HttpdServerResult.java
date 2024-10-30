@@ -1,6 +1,6 @@
 /*
  * noc-monitor-api - API of Network Operations Center Monitoring.
- * Copyright (C) 2018, 2020, 2022  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -86,7 +86,7 @@ public class HttpdServerResult extends TableMultiResult implements Serializable 
         return concurrency;
       case 1:
         return maxConcurrency;
-      case 2: {
+      case 2:
         return
             ((concurrencyLow == -1) ? "-" : Integer.toString(concurrencyLow))
                 + " / "
@@ -95,7 +95,6 @@ public class HttpdServerResult extends TableMultiResult implements Serializable 
                 + ((concurrencyHigh == -1) ? "-" : Integer.toString(concurrencyHigh))
                 + " / "
                 + ((concurrencyCritical == -1) ? "-" : Integer.toString(concurrencyCritical));
-      }
       default:
         throw new IndexOutOfBoundsException();
     }

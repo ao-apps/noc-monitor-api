@@ -1,6 +1,6 @@
 /*
  * noc-monitor-api - API of Network Operations Center Monitoring.
- * Copyright (C) 2008-2011, 2016, 2018, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2008-2011, 2016, 2018, 2020, 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -105,12 +105,11 @@ public final class TableResult extends Result implements Serializable {
 
   /**
    * Gets the table data.  Each element may be found with the expression:
-   * <pre>
-   * List&lt;?&gt; tableData = tableResult.getTableData();
+   *
+   * <pre>List&lt;?&gt; tableData = tableResult.getTableData();
    * int columns = tableResult.getColumns();
    *
-   * Object cellData = tableData.get(row*columns + column);
-   * </pre>
+   * Object cellData = tableData.get(row*columns + column);</pre>
    */
   public List<?> getTableData(Locale locale) {
     List<?> td = tableData.apply(locale);

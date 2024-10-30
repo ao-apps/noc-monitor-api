@@ -1,6 +1,6 @@
 /*
  * noc-monitor-api - API of Network Operations Center Monitoring.
- * Copyright (C) 2009-2012, 2016, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2009-2012, 2016, 2020, 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -99,7 +99,7 @@ public class NetDeviceBitRateResult extends TableMultiResult implements Serializ
         return txPacketsPerSecond == -1 ? null : new ApproximateDisplayExactBitRate(txPacketsPerSecond);
       case 3:
         return rxPacketsPerSecond == -1 ? null : new ApproximateDisplayExactBitRate(rxPacketsPerSecond);
-      case 4: {
+      case 4:
         return
             (bpsLow == -1 ? "-" : Strings.getApproximateBitRate(bpsLow))
                 + " / "
@@ -108,7 +108,6 @@ public class NetDeviceBitRateResult extends TableMultiResult implements Serializ
                 + (bpsHigh == -1 ? "-" : Strings.getApproximateBitRate(bpsHigh))
                 + " / "
                 + (bpsCritical == -1 ? "-" : Strings.getApproximateBitRate(bpsCritical));
-      }
       default:
         throw new IndexOutOfBoundsException();
     }

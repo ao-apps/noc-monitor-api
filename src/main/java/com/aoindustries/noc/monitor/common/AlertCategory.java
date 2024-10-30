@@ -1,6 +1,6 @@
 /*
  * noc-monitor-api - API of Network Operations Center Monitoring.
- * Copyright (C) 2018, 2020, 2022  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -29,11 +29,10 @@ import com.aoindustries.aoserv.client.ticket.TicketType;
 /**
  * The different alert categories in the system.  The category can affect
  * which sound is played, for example.
- * <p>
- * These categories are in a priority order.  When two alerts exist at the same
+ *
+ * <p>These categories are in a priority order.  When two alerts exist at the same
  * level, but in different categories, the higher priority category is used
- * for audible notifications.
- * </p>
+ * for audible notifications.</p>
  *
  * @author  AO Industries, Inc.
  */
@@ -66,9 +65,8 @@ public enum AlertCategory {
 
   /**
    * Alerts coming from the monitoring system.
-   * <p>
-   * TODO: Should this be split to infrastructure, virtual, and other?
-   * </p>
+   *
+   * <p>TODO: Should this be split to infrastructure, virtual, and other?</p>
    */
   MONITORING
 }
