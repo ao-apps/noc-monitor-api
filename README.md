@@ -22,7 +22,7 @@ API of [Network Operations Center Monitoring](https://github.com/ao-apps/noc-mon
 * [Project Home](https://aoindustries.com/noc/monitor/api/)
 * [Changelog](https://aoindustries.com/noc/monitor/api/changelog)
 * [API Docs](https://aoindustries.com/noc/monitor/api/apidocs/)
-* [Maven Central Repository](https://central.sonatype.com/artifact/com.aoindustries/noc-monitor-api)
+* [Central Repository](https://central.sonatype.com/artifact/com.aoindustries/noc-monitor-api)
 * [GitHub](https://github.com/ao-apps/noc-monitor-api)
 
 ## Contact Us
